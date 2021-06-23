@@ -29,6 +29,9 @@ const postSchema = new Schema({
         default: "title",
         required: true
     },
+    image: {
+        type: String
+    },
     ingredients: {
         type: Array,
         default: ["list", "ingredients", "here"],
