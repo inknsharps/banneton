@@ -44,7 +44,7 @@ const postSchema = new Schema({
         default: ["list", "tags", "here"]
     },
     comments: {
-        type: [commentSchema],
+        type: [ commentSchema ],
         default: []
     },
     date: {
