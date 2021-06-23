@@ -20,8 +20,8 @@ router.post("/", cors(), async (req, res) => {
 	}
 });
 
-// Don't touch the comments, and date properties for now
-// The comments will need to be an array of objects, which are then set with the commments
+// This route should only deal with information that the author of the post makes.
+// Comments and such should be handled in the comments route.
 router.put("/:id", cors(), async (req, res) => {
 	try {
 		const updatedPost = await Post.updateOne(
