@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 3001;
 // Storing the session in a sessions collection
 const MongoDBStore = require("connect-mongodb-session")(session);
 const store = new MongoDBStore({ 
-	uri: process.env.MONGODB_URI || "mongodb://localhost/applicationdb",
+	uri: process.env.MONGODB_URI || "mongodb://localhost/lievitodb",
 	collection: "sessions"
 });
 

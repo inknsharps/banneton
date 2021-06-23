@@ -39,7 +39,7 @@ router.post("/login", cors(), async (req, res) => {
             return;
         };
         req.session.save(() => {
-            req.session.user_id = newUser._id;
+            req.session.user_id = user._id;
             req.session.logged_in = true;
             res.json({ user, message: "You are now logged in!" });
         });
