@@ -7,7 +7,7 @@ router.get("/", cors(), async(req, res) => {
         const posts = await Post.find({});
         res.json(posts);
     } catch (error) {
-        res.json(error);
+        res.status(500).json(error);
     }
 });
 
@@ -16,7 +16,7 @@ router.post("/", cors(), async (req, res) => {
 		const newPost = await Post.create(req.body);
 		res.json(newPost);
 	} catch (error) {
-		res.json(error);
+		res.status(500).json(error);
 	}
 });
 
@@ -38,7 +38,7 @@ router.put("/:id", cors(), async (req, res) => {
 		);
 		res.json(updatedPost);
 	} catch (error) {
-		res.json(error);
+        res.status(500).json(error);
 	}
 });
 
@@ -49,7 +49,7 @@ router.delete("/:id", cors(), async (req, res) => {
 		);
 		res.json(deletedCodeSnippet);
 	} catch (error) {
-		res.json(error);
+        res.status(500).json(error);
 	}
 });
 

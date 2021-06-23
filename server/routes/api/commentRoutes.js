@@ -3,7 +3,7 @@ const Post = require("../../models/Post");
 const cors = require("cors");
 
 // Unsure if this works, basically we pass in the _id of the comment, then update the Post directly (since the comment is a subdocument). 
-// Our matcher is for the comment _id, then we use the $pull operator to remove an entry from the array of comments.
+// Our matcher is for the comment _id, then we use the $pull operator to remove the entry with that _id from the array of comments.
 router.delete("/:id", cors(), async (res, req) => {
     try {
         const deletedComment = await Post.updateOne(
@@ -16,7 +16,7 @@ router.delete("/:id", cors(), async (res, req) => {
         });
         res.json(deletedComment);
     } catch (error) {
-        res.json(error);
+        res.status(500).json(error);
     }
 });
 
