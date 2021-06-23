@@ -22,7 +22,7 @@ const userSchema = new Schema({
     }
 });
 
-userSchema.pre("save", function(next) {
+userSchema.pre("save", async function(next) {
     const user = this;
     if (!user.isModified("password")){
         return next();
@@ -36,7 +36,7 @@ userSchema.pre("save", function(next) {
     }
 });
 
-userSchema.pre("updateOne", function(next) {
+userSchema.pre("updateOne", async function(next) {
     const update = this.getUpdate().$set;
     if (!update.password) {
         return next();
