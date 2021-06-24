@@ -1,8 +1,9 @@
 import axios from "axios";
 
+// Change this later once we get out of development
 const baseURL = "http://localhost:3001";
 
-export const postNewPost = async (formData) => {
+export const postNewPost = async formData => {
     try {
         const newPost = await axios.post(`${baseURL}/api/posts`, formData)
         console.log("Successfully POSTED:", newPost);
