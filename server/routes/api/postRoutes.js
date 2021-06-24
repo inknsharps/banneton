@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const Post = require("../../models/Post");
 const cors = require("cors");
+const uploadImage = require("../../utils/multer");
 
 router.get("/", cors(), async(req, res) => {
     try {
@@ -11,9 +12,17 @@ router.get("/", cors(), async(req, res) => {
     }
 });
 
-router.post("/", cors(), async (req, res) => {
+router.post("/", cors(), uploadImage, async (req, res) => {
 	try {
-		const newPost = await Post.create(req.body);
+		console.log(req.file);
+		const newPost = await Post.create({
+			author: req.body.author,
+			title: req.body.title,
+			image: req.file.filename,
+			ingredients: req.body.ingredients,	
+			method: req.body.method,
+			tags: req.body.tags
+		});
 		res.json(newPost);
 	} catch (error) {
 		res.status(500).json(error);
