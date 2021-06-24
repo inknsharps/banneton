@@ -14,7 +14,9 @@ router.get("/", cors(), async(req, res) => {
 
 router.post("/", cors(), uploadImage, async (req, res) => {
 	try {
-		console.log(req.file);
+		console.log("Non-file form data received:", req.body);
+		console.log("File form data received:", req.file);
+		
 		const newPost = await Post.create({
 			author: req.body.author,
 			title: req.body.title,
