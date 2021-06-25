@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import FormInput from "../../Form/FormInput/FormInput";
 import UserContext from "../../../contexts/UserContext";
 import { postLogin } from "../../../utils/API";
+import ButtonDark from "../../Button/ButtonDark/ButtonDark";
 
 const LoginContainer = () => {
     const { logInUser } = useContext(UserContext);
@@ -14,7 +15,7 @@ const LoginContainer = () => {
         };
         postLogin(loginData)
             .then(response => {
-                console.log(response);
+                // The response object should include the username and _id properties, which get destructured in the logInUser function anyways
                 logInUser(response);
             })
             .catch(error => alert("Incorrect username or password!"));
@@ -25,7 +26,7 @@ const LoginContainer = () => {
             <form onSubmit={ handleLogin }>
                 <FormInput labelName="Username:" htmlFor="username" />
                 <FormInput labelName="Password:" htmlFor="password" inputType="password" />
-                <button type="submit">Submit</button>
+                <ButtonDark text="Login" type="submit" />
             </form>
         </div>
     )

@@ -7,11 +7,11 @@ const NavbarContainer = () => {
     const { userState } = useContext(UserContext);
     
     return (
-        <nav className="NavbarContainer flex justify-between">
+        <nav className="NavbarContainer flex justify-between bg-indigo-600 text-white">
             <NavLink to="/">
-                <h1>Banneton</h1>
+                <h1 className="p-5 text-3xl">Banneton</h1>
             </NavLink>
-            <ul className="flex justify-between">
+            <ul className="p-5 flex justify-evenly">
                 { !userState.loggedIn ? <NavbarLi name="Login" link="/login"/> : <NavbarLi name="Logout" link="/logout" /> }
                 <NavbarLi name="Search" link="/search"/>
             </ul>
