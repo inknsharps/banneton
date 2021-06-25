@@ -12,6 +12,16 @@ export const postLogin = async loginData => {
     }
 };
 
+export const createLogin = async newUserData => {
+    try {
+        const newUser = await axios.post(`${baseURL}/api/users/`, newUserData);
+        console.log("Successfully POSTED:", newUser);
+        return newUser.data;
+    } catch (error) {
+        console.log("Error with create login request to API!", error);
+    }
+};
+
 export const postNewPost = async formData => {
     try {
         const newPost = await axios.post(`${baseURL}/api/posts`, formData);

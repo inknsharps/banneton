@@ -19,7 +19,7 @@ router.post("/", cors(), async (req, res) => {
         req.session.save(() => {
             req.session.user_id = newUser._id;
             req.session.logged_in = true;
-            res.status(200).json(newUser);
+            res.status(200).json({ username: newUser.username, _id: newUser._id, message: "You are now logged in!" });
         });
     } catch (error) {
         res.status(500).json(error);
