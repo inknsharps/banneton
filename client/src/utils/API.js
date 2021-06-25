@@ -3,9 +3,18 @@ import axios from "axios";
 // Change this later once we get out of development
 const baseURL = "http://localhost:3001";
 
+export const postLogin = async loginData => {
+    try {
+        const user = await axios.post(`${baseURL}/api/users/login`, loginData);
+        return user.data;
+    } catch (error) {
+        console.log("Error with login request to API!", error);
+    }
+};
+
 export const postNewPost = async formData => {
     try {
-        const newPost = await axios.post(`${baseURL}/api/posts`, formData)
+        const newPost = await axios.post(`${baseURL}/api/posts`, formData);
         console.log("Successfully POSTED:", newPost);
     } catch (error) {
         console.log("Error with POST request to API!", error);
