@@ -19,7 +19,7 @@ router.post("/", cors(), async (req, res) => {
         req.session.save(() => {
             req.session.user_id = newUser._id;
             req.session.logged_in = true;
-            res.status(200).json({ username: newUser.username, _id: newUser._id, message: "You are now logged in!" });
+            res.status(200).json({ username: newUser.username, _id: newUser._id, loggedIn: req.session.logged_in, message: "You are now logged in!" });
         });
     } catch (error) {
         res.status(500).json(error);
@@ -41,7 +41,7 @@ router.post("/login", cors(), async (req, res) => {
         req.session.save(() => {
             req.session.user_id = user._id;
             req.session.logged_in = true;
-            res.json({ username: user.username, _id: user._id, message: "You are now logged in!" });
+            res.json({ username: user.username, _id: user._id, loggedIn: req.session.logged_in, message: "You are now logged in!" });
         });
     } catch (error) {
         res.status(400).json(err);
@@ -49,11 +49,13 @@ router.post("/login", cors(), async (req, res) => {
 });
 
 router.post("/logout", (req, res) => {
-    if (req.session.logged_in) {
+    try {
+        console.log("Logout session:", req.session);
         req.session.destroy(() => {
-            res.status(204).end();
+            res.status(204).json({ message: "You have been logged out." }).end();
         });
-    } else {
+    } catch (error) {
+        console.log("Error with logout.", error);
         res.status(404).end();
     };
 });
