@@ -22,6 +22,15 @@ export const createLogin = async newUserData => {
     }
 };
 
+export const postLogout = async () => {
+    try {
+        const logout = await axios.post(`${baseURL}/api/users/logout`);
+        console.log("Successfully logged out:", logout);
+    } catch (error) {
+        console.log("Error with logout request to API!", error);
+    }
+};
+
 export const postNewPost = async formData => {
     try {
         const newPost = await axios.post(`${baseURL}/api/posts`, formData);
