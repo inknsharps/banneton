@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import { HashRouter as Router, Route, Switch, Redirect } from "react-router-dom"; // Setting this to hashrouter for convenience for the time being
 
 import NavbarContainer from "./components/Navbar/NavbarContainer/NavbarContainer";
@@ -13,6 +13,15 @@ import useLogin from "./hooks/useLogin";
 
 const App = () => {
     const [ userState, logInUser, logOutUser ] = useLogin();
+
+    useEffect(() => {
+        const currentUser = sessionStorage.getItem("username", userState.username);
+        const currentUserId = sessionStorage.getItem("_id", userState._id);
+        const loggedIn = sessionStorage.getItem("loggedIn", userState.loggedIn);
+        if (loggedIn) {
+            logInUser(currentUser, currentUserId, loggedIn);
+        };
+    }, [])
 
     return (
         <Router>

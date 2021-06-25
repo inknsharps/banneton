@@ -15,7 +15,14 @@ const LoginContainer = () => {
             password: event.target[1].value
         };
         postLogin(loginData)
-            .then(response => logInUser(response)) // The response object should include the username and _id properties, which get destructured in the logInUser function anyways
+            .then(response => {
+                // The response object should include the username and _id properties, which get destructured in the logInUser function anyways
+                logInUser(response);
+                // Set the sessionStorage accordingly so when the user comes back or refreshes the page, they're still logged in
+                sessionStorage.setItem("username", response.username);
+                sessionStorage.setItem("_id", response._id);
+                sessionStorage.setItem("loggedIn", response.loggedIn);
+            }) 
             .catch(error => alert("Incorrect username or password!"));
     };
 
@@ -27,7 +34,12 @@ const LoginContainer = () => {
             email: event.target[2].value
         };
         createLogin(newLoginData)
-            .then(response => logInUser(response))
+            .then(response => {
+                logInUser(response);
+                sessionStorage.setItem("username", response.username);
+                sessionStorage.setItem("_id", response._id);
+                sessionStorage.setItem("loggedIn", response.loggedIn);
+            })
             .catch(error => alert("Issue with creating new user."));
     };
 
