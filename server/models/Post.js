@@ -24,6 +24,10 @@ const postSchema = new Schema({
         default: "author",
         required: true
     },
+    authorId: {
+        type: String,
+        required: true
+    },
     title: {
         type: String,
         default: "title",

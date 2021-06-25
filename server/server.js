@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 3001;
 // Storing the session in a sessions collection
 const MongoDBStore = require("connect-mongodb-session")(session);
 const store = new MongoDBStore({ 
-	uri: process.env.MONGODB_URI || "mongodb://localhost/lievitodb",
+	uri: process.env.MONGODB_URI || "mongodb://localhost/bannetondb",
 	collection: "sessions"
 });
 
@@ -27,7 +27,7 @@ const sessionOptions = {
 };
 
 mongoose.connect(
-	process.env.MONGODB_URI || "mongodb://localhost/lievitodb",
+	process.env.MONGODB_URI || "mongodb://localhost/bannetondb",
 	{ useNewUrlParser: true, useUnifiedTopology: true }
 );
 

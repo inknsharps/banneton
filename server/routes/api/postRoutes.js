@@ -29,6 +29,7 @@ router.post("/", cors(), uploadImage, async (req, res) => {
 			console.log(result);
 			const newPost = await Post.create({
 				author: req.body.author,
+				authorId: req.body.authorId,
 				title: req.body.title,
 				image: result.secure_url,
 				ingredients: req.body.ingredients,	
