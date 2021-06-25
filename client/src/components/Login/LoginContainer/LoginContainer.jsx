@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import FormInput from "../../Form/FormInput/FormInput";
+import UserContext from "../../../contexts/UserContext";
 import { postLogin } from "../../../utils/API";
 
 const LoginContainer = () => {
+    const { logInUser } = useContext(UserContext);
+
     const handleLogin = event => {
         event.preventDefault();
         const loginData = {
@@ -10,7 +13,11 @@ const LoginContainer = () => {
             password: event.target[1].value
         };
         postLogin(loginData)
-            .then(response => console.log(response));
+            .then(response => {
+                console.log(response);
+                logInUser(response);
+            })
+            .catch(error => alert("Incorrect username or password!"));
     };
 
     return (
