@@ -1,14 +1,21 @@
-import React from "react";
+import React, { useContext } from "react";
 import FormInput from "../../Form/FormInput/FormInput";
 import { postNewPost } from "../../../utils/API";
+import UserContext from "../../../contexts/UserContext";
 
 const UploadForm = () => {
+    const { userState } = useContext(UserContext);
+
     const handleSubmit = event => {
         event.preventDefault();
+
         // Luckily the synthetic event handler gives us the target, which is the form itself, which means it can be passed to the FormData() constructor
         const formData = new FormData(event.target);
-        // This SHOULD be changed whatever the current user is later, maybe through state or useRef?
-        formData.append("author", "author");
+
+        // We slap on these properties to the FormData object through state because they don't exist in the form
+        formData.append("author", userState.username);
+        formData.append("authorId", userState._id);
+        
         postNewPost(formData);
     };
 
