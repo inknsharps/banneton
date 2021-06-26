@@ -13,10 +13,21 @@ router.get("/", cors(), async (req, res) => {
     }
 });
 
-router.get("/:id", cors(), async (req, res) => {
+// This specifically gets a post based on its unique id, which will be used for single page post rendering
+router.get("/post/:id", cors(), async (req, res) => {
 	try {
 		const post = await Post.findOne({ _id: req.params.id });
 		res.json(post);
+	} catch (error) {
+		res.status(500).json(error);
+	}
+});
+
+// This specifically gets all posts from a user based on a provided user id
+router.get("/user/:id", cors(), async (req, res) => {
+	try {
+		const userPosts = await Post.find({ authorId: req.params.id });
+		res.json(userPosts);
 	} catch (error) {
 		res.status(500).json(error);
 	}
