@@ -52,9 +52,9 @@ router.post("/", cors(), uploadImage, async (req, res) => {
 				authorId: req.body.authorId,
 				title: req.body.title,
 				image: result.secure_url,
-				ingredients: req.body.ingredients,	
+				ingredients: req.body.ingredients.split(" "),	
 				method: req.body.method,
-				tags: req.body.tags
+				tags: req.body.tags.split(" ")
 			});
 			res.json(newPost);
 		});
