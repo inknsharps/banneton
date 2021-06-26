@@ -6,7 +6,7 @@ const storage = multer.diskStorage({
     destination: path.join(__dirname, `../uploads/`),
     filename: (req, file, cb) => {
         // Validate the extension
-        const extension = path.extname(file.originalname);
+        const extension = path.extname(file.originalname.toLowerCase());
         if (extension !== ".jpg" && extension !== ".jpeg" && extension !== ".png") {
             return cb(new Error(`File type ${extension} is not supported.`));
         };
