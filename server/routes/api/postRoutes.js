@@ -4,13 +4,22 @@ const cors = require("cors");
 const uploadImage = require("../../utils/multer");
 const cloudinary = require("../../utils/cloudinary");
 
-router.get("/", cors(), async(req, res) => {
+router.get("/", cors(), async (req, res) => {
     try {
         const posts = await Post.find({});
         res.json(posts);
     } catch (error) {
         res.status(500).json(error);
     }
+});
+
+router.get("/:id", cors(), async (req, res) => {
+	try {
+		const post = await Post.findOne({ _id: req.params.id });
+		res.json(post);
+	} catch (error) {
+		res.status(500).json(error);
+	}
 });
 
 // This got a bit complicated, so the high level is:
