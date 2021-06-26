@@ -7,6 +7,7 @@ import Login from "./pages/Login";
 import Logout from "./pages/Logout";
 import Search from "./pages/Search";
 import Signup from "./pages/Signup";
+import Dashboard from "./pages/Dashboard";
 
 import UserContext from "./contexts/UserContext";
 import useLogin from "./hooks/useLogin";
@@ -38,6 +39,7 @@ const App = () => {
                         </Route>
                         <Route exact path="/search" component={ Search } />
                         <Route exact path="/signup" component={ Signup } />
+                        <Route exact path="/dashboard" component={ Dashboard } />
                     </Switch>
                 </div>
             </UserContext.Provider>
