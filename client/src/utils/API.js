@@ -51,8 +51,17 @@ export const getPosts = async () => {
 
 export const getSinglePost = async postId => {
     try {
-        const singlePost = await axios.get(`${baseURL}/api/posts/${postId}`);
+        const singlePost = await axios.get(`${baseURL}/api/posts/post/${postId}`);
         return singlePost.data;
+    } catch (error) {
+        console.log("Error with GET request to API!", error);
+    }
+};
+
+export const getUserPosts = async userId => {
+    try {
+        const userPosts = await axios.get(`${baseURL}/api/posts/user/${userId}`);
+        return userPosts.data;
     } catch (error) {
         console.log("Error with GET request to API!", error);
     }

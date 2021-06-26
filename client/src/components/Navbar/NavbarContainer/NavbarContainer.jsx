@@ -13,6 +13,8 @@ const NavbarContainer = () => {
             </NavLink>
             <ul className="p-5 flex justify-evenly">
                 { !userState.loggedIn ? <NavbarLi name="Login" link="/login"/> : <NavbarLi name="Logout" link="/logout" /> }
+            </ul>
+            <ul className="p-5 flex justify-evenly">
                 <NavbarLi name="Search" link="/search"/>
             </ul>
             <ul className="p-5 flex justify-evenly">

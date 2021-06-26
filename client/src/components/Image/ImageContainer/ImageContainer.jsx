@@ -1,22 +1,31 @@
 // Pass in a specific API get request to this component to have it work properly!
-// If using this component to render one card, make sure to pass in an _id prop.
+// Also if an _id and idType prop is not passed in, it will default to calling the API get request with no arguments, which will probably break if the request doesn't support that.
 
 import React, { useState, useEffect } from "react";
 import ImageCard from "../ImageCard/ImageCard";
 
-const ImageContainer = ({ getRequest, _id }) => {
+const ImageContainer = ({ getRequest, _id, idType }) => {
     const [ currentPosts, setCurrentPosts ] = useState([]);
 
+    // Side note, because I don't want to deal with conditional rendering, we just shove the results for a single post request into an array so we can still call generatePosts on it
     useEffect(() => {
-        if (_id) {
-            getRequest(_id)
-                .then(data => setCurrentPosts(data))
-                .catch(error => console.error(error));
-        } else {
-            getRequest()
-                .then(data => setCurrentPosts(data))
-                .catch(error => console.error(error));
-        };
+        switch (idType) {
+            case ("post"):
+                getRequest(_id)
+                    .then(data => setCurrentPosts([data]))
+                    .catch(error => console.error(error));
+                return;
+            case ("user"):
+                getRequest(_id)
+                    .then(data => setCurrentPosts(data))
+                    .catch(error => console.error(error));
+                return;
+            default:
+                getRequest()
+                    .then(data => setCurrentPosts(data))
+                    .catch(error => console.error(error));
+                return;
+        }
     }, []);
 
     const generatePosts = posts => {
@@ -27,7 +36,7 @@ const ImageContainer = ({ getRequest, _id }) => {
 
     return (
         <div className="ImageContainer grid grid-cols-4"> 
-            { _id ? <ImageCard {...currentPosts} /> : generatePosts(currentPosts) }
+            { generatePosts(currentPosts) }
             
         </div>
     )
