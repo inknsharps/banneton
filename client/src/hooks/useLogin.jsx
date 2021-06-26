@@ -8,11 +8,11 @@ const useLogin = () => {
         loggedIn: false
     });
     
-    const logInUser = ({ username, _id }) => {
+    const logInUser = (user) => {
         setUserState({
-            username: username,
-            _id: _id,
-            loggedIn: true
+            username: user.username,
+            _id: user._id,
+            loggedIn: user.loggedIn
         });
     };
     
