@@ -39,3 +39,21 @@ export const postNewPost = async formData => {
         console.log("Error with POST request to API!", error);
     }
 };
+
+export const getPosts = async () => {
+    try {
+        const posts = await axios.get(`${baseURL}/api/posts`);
+        return posts.data;
+    } catch (error) {
+        console.log("Error with GET request to API!", error);
+    }
+};
+
+export const getSinglePost = async postId => {
+    try {
+        const singlePost = await axios.get(`${baseURL}/api/posts/${postId}`);
+        return singlePost.data;
+    } catch (error) {
+        console.log("Error with GET request to API!", error);
+    }
+};
