@@ -16,11 +16,11 @@ const App = () => {
     const [ userState, logInUser, logOutUser ] = useLogin();
 
     useEffect(() => {
-        const currentUser = sessionStorage.getItem("username", userState.username);
-        const currentUserId = sessionStorage.getItem("_id", userState._id);
-        const loggedIn = sessionStorage.getItem("loggedIn", userState.loggedIn);
+        const username = sessionStorage.getItem("username");
+        const _id = sessionStorage.getItem("_id");
+        const loggedIn = JSON.parse(sessionStorage.getItem("loggedIn")); // We have to JSON parse this because sessionStorage only stores strings
         if (loggedIn) {
-            logInUser(currentUser, currentUserId, loggedIn);
+            logInUser({ username, _id, loggedIn });
         };
     }, [])
 
@@ -39,7 +39,9 @@ const App = () => {
                         </Route>
                         <Route exact path="/search" component={ Search } />
                         <Route exact path="/signup" component={ Signup } />
-                        <Route exact path="/dashboard" component={ Dashboard } />
+                        <Route exact path="/dashboard">
+                            { !userState.loggedIn ? <Redirect to="/" /> : <Dashboard /> }
+                        </Route>
                     </Switch>
                 </div>
             </UserContext.Provider>
