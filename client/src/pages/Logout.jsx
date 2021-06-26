@@ -12,11 +12,13 @@ const Logout = () => {
         sessionStorage.setItem("_id", "");
         sessionStorage.setItem("loggedIn", false);
         setTimeout(logOutUser, 5000);
+        return () => clearTimeout();
     }, []);
 
     return (
         <div className="Logout">
             <h1>You have been logged out.</h1>
+            <p>Redirecting to main page...</p>
         </div>
     )
 };
