@@ -7,7 +7,7 @@ import ImageCard from "../ImageCard/ImageCard";
 const ImageContainer = ({ getRequest, _id, idType }) => {
     const [ currentPosts, setCurrentPosts ] = useState([]);
 
-    // Side note, because I don't want to deal with conditional rendering, we just shove the results for a single post request into an array so we can still call generatePosts on it
+    // I don't want to deal with conditional rendering, we just shove the results for a single post request into an array so we can still call generatePosts on it
     useEffect(() => {
         switch (idType) {
             case ("post"):
@@ -30,14 +30,22 @@ const ImageContainer = ({ getRequest, _id, idType }) => {
 
     const generatePosts = posts => {
         return posts.map(post => {
-            return <ImageCard key={ post._id } author={ post.author } image={ post.image } title={ post.title } />
+            return (
+                <ImageCard 
+                    key={ post._id } 
+                    _id={ post._id } 
+                    authorId={ post.authorId } 
+                    author={ post.author } 
+                    image={ post.image } 
+                    title={ post.title } 
+                />
+            )
         });
     };
 
     return (
         <div className="ImageContainer grid grid-cols-4"> 
             { generatePosts(currentPosts) }
-            
         </div>
     )
 };

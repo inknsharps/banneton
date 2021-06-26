@@ -22,7 +22,7 @@ const App = () => {
         if (loggedIn) {
             logInUser({ username, _id, loggedIn });
         };
-    }, [])
+    }, []);
 
     return (
         <Router>
