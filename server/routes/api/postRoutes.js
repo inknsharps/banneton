@@ -71,11 +71,10 @@ router.put("/:id", cors(), async (req, res) => {
 			{ _id: req.params.id },
 			{ 
                 $set: { 
-                    author: req.body.author, 
                     title: req.body.title,
-                    ingredients: req.body.ingredients,
+                    ingredients: req.body.ingredients.split(" "),
                     method: req.body.method,
-                    tags: req.body.tags
+                    tags: req.body.tags.split(" ")
                 } 
             }
 		);
