@@ -37,7 +37,10 @@ const ImageContainer = ({ getRequest, _id, idType }) => {
                     authorId={ post.authorId } 
                     author={ post.author } 
                     image={ post.image } 
-                    title={ post.title } 
+                    title={ post.title }
+                    method={ post.method }
+                    tags={ post.tags }
+                    ingredients={ post.ingredients }
                 />
             )
         });

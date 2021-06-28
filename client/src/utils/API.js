@@ -67,6 +67,16 @@ export const getUserPosts = async userId => {
     }
 };
 
+export const updatePost = async (postId, updatedData) => {
+    try {
+        const updatedPost = await axios.put(`${baseURL}/api/posts/${postId}`, updatedData);
+        return updatedPost.data;
+    } catch (error) {
+        console.log("Error with PUT request to API!", error);
+        
+    }
+};
+
 export const deletePost = async postId => {
     try {
         const deletedPost = await axios.delete(`${baseURL}/api/posts/${postId}`);
