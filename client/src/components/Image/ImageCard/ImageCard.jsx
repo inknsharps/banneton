@@ -12,7 +12,7 @@ const ImageCard = ({ image, title, author, _id, authorId }) => {
             <img src={ image } alt={ title } />
             <h2>{ title }</h2>
             <h3>By: { author }</h3>
-            { userState._id === authorId ? <ImageOptions /> : null }
+            { userState._id === authorId ? <ImageOptions _id={ _id } /> : null }
         </div>
     )
 };

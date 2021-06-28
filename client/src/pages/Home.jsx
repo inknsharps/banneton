@@ -11,7 +11,6 @@ const Home = () => {
             <HeroContainer />
             <SectionHeader headerText="Latest Posts:" />
             <ImageContainer getRequest={ getPosts } />
-            <ImageContainer getRequest={ getSinglePost } _id="60d556660614e533e0a4ffd6" idType="post" />
         </div>
     )
 };

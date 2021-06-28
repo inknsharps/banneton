@@ -66,3 +66,13 @@ export const getUserPosts = async userId => {
         console.log("Error with GET request to API!", error);
     }
 };
+
+export const deletePost = async postId => {
+    try {
+        const deletedPost = await axios.delete(`${baseURL}/api/posts/${postId}`);
+        return deletedPost.data;
+    } catch (error) {
+        console.log("Error with DELETE request to API!", error);
+        
+    }
+};
