@@ -8,6 +8,7 @@ import Logout from "./pages/Logout";
 import Search from "./pages/Search";
 import Signup from "./pages/Signup";
 import Dashboard from "./pages/Dashboard";
+import Post from "./pages/Post";
 
 import UserContext from "./contexts/UserContext";
 import useLogin from "./hooks/useLogin";
@@ -42,6 +43,7 @@ const App = () => {
                         <Route exact path="/dashboard">
                             { !userState.loggedIn ? <Redirect to="/" /> : <Dashboard /> }
                         </Route>
+                        <Route path="/:post" component={ Post } />
                     </Switch>
                 </div>
             </UserContext.Provider>

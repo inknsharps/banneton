@@ -15,7 +15,9 @@ const ImageCard = ({ image, title, author, _id, authorId, method, tags, ingredie
 
     return (
         <div className="ImageCard">
-            <img src={ image } alt={ title } />
+            <a href={`/#/${_id}`}> {/* Current this uses a hash router link- consider changing if the router changes */}
+                <img src={ image } alt={ title } />
+            </a>
             <h2>{ title }</h2>
             <h3>By: { author }</h3>
             { userState._id === authorId ? <ImageOptions _id={ _id } handleEditMode={ handleEditMode }/> : null }
