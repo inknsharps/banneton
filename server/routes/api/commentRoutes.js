@@ -27,8 +27,7 @@ router.put("/update", cors(), async (req, res) => {
                 "comments._id": req.body.commentId 
             },
             { 
-                $set: { 
-                    "comments.$.author": req.body.comments.author, 
+                $set: {  
                     "comments.$.content": req.body.comments.content 
                 } 
             }
@@ -41,8 +40,9 @@ router.put("/update", cors(), async (req, res) => {
 
 // In the req object, provide a postId and a commentId key-value pair.
 // Then we update the post based on its _id, then use the $pull operator to remove an entry in the comments subdocument (which is an array), where the comment _id matches the commentId in the req body.
-router.delete("/", cors(), async (req, res) => {
+router.put("/delete", cors(), async (req, res) => {
     try {
+        console.log(req.body);
         const deletedComment = await Post.updateOne(
             { _id: req.body.postId },
             { $pull: { comments: { _id: req.body.commentId } } },

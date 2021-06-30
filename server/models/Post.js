@@ -7,6 +7,11 @@ const commentSchema = new Schema({
         default: "author",
         required: true
     },
+    authorId: {
+        type: String,
+        default: "authorid",
+        require: true
+    },
     content: {
         type: String,
         default: "comment content",
