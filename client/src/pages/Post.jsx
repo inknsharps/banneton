@@ -1,7 +1,7 @@
 // Consider ditching the general use ImageContainer, since we are calling getSinglePost anyways to get comment data.
 import React, { useContext, useEffect, useState } from "react";
 
-import ImageContainer from "../components/Image/ImageContainer/ImageContainer";
+import PostContainer from "../components/Post/PostContainer/PostContainer";
 import CommentContainer from "../components/Comment/CommentContainer/CommentContainer";
 import CommentForm from "../components/Comment/CommentForm/CommentForm";
 
@@ -12,10 +12,18 @@ const Post = props => {
     const { userState } = useContext(UserContext);
     const postId = props.match.params.post; // Grab the post id from the react router props
     const [ comments, setComments ] = useState([]);
+    const [ post, setPost ] = useState({});
+    const [ ingredients, setIngredients ] = useState([]);
+    const [ tags, setTags ] = useState([]);
 
     useEffect(() => {
         getSinglePost(postId)
-            .then(({ comments }) => setComments(comments))
+            .then(data => {
+                setPost(data);
+                setIngredients(data.ingredients);
+                setTags(data.tags);
+                setComments(data.comments);
+            })
             .catch(error => console.error(error));
     }, []);
 
@@ -25,8 +33,7 @@ const Post = props => {
 
     return (
         <div className="Post">
-            <h1>Post Page</h1>
-            <ImageContainer getRequest={ getSinglePost } idType="post" _id={ postId } />
+            <PostContainer author={ post.author } date={ post.date } image={ post.image } ingredients={ ingredients } method={ post.method } tags={ tags } title={ post.title } />
             { generateComments(comments) }
             { userState.loggedIn ? <CommentForm postId={ postId } author={ userState.username } authorId={ userState._id } /> : null }
         </div>
