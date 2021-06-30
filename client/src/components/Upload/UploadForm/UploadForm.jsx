@@ -22,7 +22,7 @@ const UploadForm = () => {
     };
 
     return (
-        <form className="UploadForm" name="upload-form" encType="multipart/form-data" onSubmit={ handleSubmit }>
+        <form className="UploadForm bg-gray-100 p-12" name="upload-form" encType="multipart/form-data" onSubmit={ handleSubmit }>
             <FormInput labelName="Title:" htmlFor="title" placeholder="Title" />
             <FormInput labelName="Ingredients:" htmlFor="ingredients" placeholder="Ingredients" />
             <FormInput labelName="Method:" htmlFor="method" placeholder="Method" />
