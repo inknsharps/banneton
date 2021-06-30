@@ -3,13 +3,14 @@ import ButtonDark from "../../Button/ButtonDark/ButtonDark";
 
 import { putComment } from "../../../utils/API";
 
-const CommentForm = ({ postId, author }) => {
+const CommentForm = ({ postId, author, authorId }) => {
     const handleSubmit = event => {
         event.preventDefault();
         const formData = {
             postId: postId,
             comments: {
                 author: author,
+                authorId: authorId,
                 content: event.target[0].value
             }
         };

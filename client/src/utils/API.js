@@ -95,3 +95,13 @@ export const putComment = async commentData => {
         console.log("Error with PUT request to API!", error);
     }
 };
+
+export const deleteComment = async commentData => {
+    try {
+        const deletedComment = await axios.put(`${baseURL}/api/comment/delete`, commentData);
+        console.log(deletedComment);
+        return deletedComment.data;
+    } catch (error) {
+        console.log("Error with DELETE request to API!", error);
+    }
+};

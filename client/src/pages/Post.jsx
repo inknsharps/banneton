@@ -20,7 +20,7 @@ const Post = props => {
     }, []);
 
     const generateComments = comments => {
-        return comments.map(comment => <CommentContainer key={ comment._id } content={ comment.content } author={ comment.author } date={ comment.date } />)
+        return comments.map(comment => <CommentContainer key={ comment._id } authorId={ comment.authorId } author={ comment.author } content={ comment.content } date={ comment.date } postId={ postId } commentId={ comment._id } />)
     };
 
     return (
@@ -28,7 +28,7 @@ const Post = props => {
             <h1>Post Page</h1>
             <ImageContainer getRequest={ getSinglePost } idType="post" _id={ postId } />
             { generateComments(comments) }
-            { userState.loggedIn ? <CommentForm postId={ postId } author={ userState.username } /> : null }
+            { userState.loggedIn ? <CommentForm postId={ postId } author={ userState.username } authorId={ userState._id } /> : null }
         </div>
     )
 };

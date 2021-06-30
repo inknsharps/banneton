@@ -1,13 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import CommentHeader from "../CommentHeader/CommentHeader";
 import CommentBody from "../CommentBody/CommentBody";
+import CommentOptions from "../CommentOptions/CommentOptions";
 
-const CommentContainer = ({ content, author, date }) => {
+import UserContext from "../../../contexts/UserContext";
+
+const CommentContainer = ({ content, author, authorId, date, postId, commentId }) => {
+    const { userState } = useContext(UserContext);
+
     return (
         <div className="CommentContainer">
-            <CommentHeader author={ author } date={ date }/>
-            <CommentBody content = { content }/>
+            <CommentHeader author={ author } date={ date } />
+            <CommentBody content={ content } />
+            { userState._id === authorId ? <CommentOptions postId={ postId } commentId={ commentId } /> : null }
         </div>
     )
 };
