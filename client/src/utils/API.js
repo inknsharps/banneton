@@ -86,3 +86,12 @@ export const deletePost = async postId => {
         
     }
 };
+
+export const putComment = async commentData => {
+    try {
+        const newComment = await axios.put(`${baseURL}/api/comment/create`, commentData);
+        return newComment.data;
+    } catch (error) {
+        console.log("Error with PUT request to API!", error);
+    }
+};
