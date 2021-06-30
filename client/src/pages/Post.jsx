@@ -28,7 +28,7 @@ const Post = props => {
             <h1>Post Page</h1>
             <ImageContainer getRequest={ getSinglePost } idType="post" _id={ postId } />
             { generateComments(comments) }
-            { userState._id ? <CommentForm postId={ postId } author={ userState.username } /> : null }
+            { userState.loggedIn ? <CommentForm postId={ postId } author={ userState.username } /> : null }
         </div>
     )
 };
