@@ -9,7 +9,7 @@ router.get("/title", cors(), async (req, res) => {
     try {
         const result = await Post.fuzzy({
             title_tg: {
-                searchQuery: req.body.titleQuery
+                searchQuery: req.body.query
             }
         });
         res.json(result);
@@ -22,7 +22,7 @@ router.get("/tag", cors(), async (req, res) => {
     try {
         const result = await Post.fuzzy({
             tags_tg: {
-                searchQuery: req.body.tagQuery
+                searchQuery: req.body.query
             }
         });
         res.json(result);
