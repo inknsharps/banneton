@@ -11,6 +11,9 @@ const SearchForm = () => {
 
     // The returned array elements from the backend in this route are an object with the document property (our data from the model), and a similarity property. We just grab data from the document property for rendering
     const generateSearchResults = results => {
+        if (results === undefined) {
+            return null;
+        };
         return results.map(result => <SearchResult key={ result.document._id } _id={ result.document._id } image={ result.document.image } title={ result.document.title } />);
     };
 
@@ -37,7 +40,7 @@ const SearchForm = () => {
                 <FormRadio labelName="Tag" formName="search" htmlFor="search" defaultValue="tag" defaultChecked={ false } />
                 <ButtonDark text="Search!" type="submit" />
             </form>
-            <div>
+            <div className="p-5 grid grid-cols-4">
                 { generateSearchResults(searchResults) }
             </div>
         </div>
