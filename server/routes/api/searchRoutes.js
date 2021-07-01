@@ -5,11 +5,11 @@ const cors = require("cors");
 // These suckers are for fuzzy search use only!
 // Remember to pass in the query in the JSON body request
 
-router.get("/title", cors(), async (req, res) => {
+router.get("/title/:title", cors(), async (req, res) => {
     try {
         const result = await Post.fuzzy({
             title_tg: {
-                searchQuery: req.body.query
+                searchQuery: req.params.title
             }
         });
         res.json(result);
@@ -18,11 +18,11 @@ router.get("/title", cors(), async (req, res) => {
     }
 });
 
-router.get("/tag", cors(), async (req, res) => {
+router.get("/tag/:tag", cors(), async (req, res) => {
     try {
         const result = await Post.fuzzy({
             tags_tg: {
-                searchQuery: req.body.query
+                searchQuery: req.params.tag
             }
         });
         res.json(result);
