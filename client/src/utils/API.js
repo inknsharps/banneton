@@ -99,9 +99,17 @@ export const putComment = async commentData => {
 export const deleteComment = async commentData => {
     try {
         const deletedComment = await axios.put(`${baseURL}/api/comment/delete`, commentData);
-        console.log(deletedComment);
         return deletedComment.data;
     } catch (error) {
         console.log("Error with DELETE request to API!", error);
+    }
+};
+
+export const searchPosts = async (queryType, queryData) => {
+    try {
+        const searchResults = await axios.get(`${baseURL}/api/search/${queryType}/${queryData}`);
+        return searchResults.data;
+    } catch (error) {
+        console.log("Error with GET request to API!", error);   
     }
 };
