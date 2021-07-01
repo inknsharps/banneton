@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+const fuzzy = require("mongoose-fuzzy-search");
 
 const commentSchema = new Schema({
     author: {
@@ -63,6 +64,13 @@ const postSchema = new Schema({
         type: Date,
         default: Date.now
     },
+});
+
+postSchema.plugin(fuzzy, {
+    fields: {
+        title_tg: "title",
+        tags_tg: doc => doc.get("tags").join(" ")
+    }
 });
 
 const Post = mongoose.model("Post", postSchema);
