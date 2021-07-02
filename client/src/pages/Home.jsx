@@ -10,7 +10,11 @@ const Home = () => {
         <div className="Home m-5">
             <HeroContainer />
             <SectionHeader headerText="Latest Posts:" />
-            <ImageContainer getRequest={ getPosts } />
+            <div className="flex justify-center">
+                <div className="w-3/4">
+                    <ImageContainer getRequest={ getPosts } />
+                </div>
+            </div>
         </div>
     )
 };
