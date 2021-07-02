@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import SearchResult from "../SearchResult/SearchResult";
+import { SearchResultLarge, SearchResultSmall } from "../SearchResult/SearchResult";
 import FormInput from "../../Form/FormInput/FormInput";
 import FormRadio from "../../Form/FormRadio/FormRadio";
 import ButtonDark from "../../Button/ButtonDark/ButtonDark";
@@ -14,7 +14,21 @@ const SearchForm = () => {
         if (results === undefined) {
             return null;
         };
-        return results.map(result => <SearchResult key={ result.document._id } _id={ result.document._id } image={ result.document.image } title={ result.document.title } />);
+
+        // We make a 2D array so we can alter every 1st of 3 indices in the array
+        const matrix = results.reduce((rows, key, index) => { 
+            return (index % 3 === 0 ? rows.push([key]) : rows[rows.length-1].push(key)) && rows;
+        }, []);
+
+        return matrix.map(row => {
+            // For each "row" of the 2D array, check for the first element and make that the big one
+            return row.map((col, index) => {
+                if (index % 3 === 0) {
+                    return <SearchResultLarge key={ col.document._id } _id={ col.document._id } image={ col.document.image } title={ col.document.title } />
+                };
+                return <SearchResultSmall key={ col.document._id } _id={ col.document._id } image={ col.document.image } title={ col.document.title } />
+            }) 
+        });
     };
 
     const handleSubmit = event => {
@@ -40,8 +54,14 @@ const SearchForm = () => {
                 <FormRadio labelName="Tag" formName="search" htmlFor="search" defaultValue="tag" defaultChecked={ false } />
                 <ButtonDark text="Search!" type="submit" />
             </form>
-            <div className="p-5 grid grid-cols-4">
-                { generateSearchResults(searchResults) }
+            <div className="flex justify-center">
+                {
+                    searchResults === undefined || !searchResults[0]
+                        ? null 
+                        : <div className="grid gap-1 grid-cols-4 grid-rows-4 max-w-7xl bg-gray-200 p-2">
+                            { generateSearchResults(searchResults) }
+                        </div>
+                }
             </div>
         </div>
     )
