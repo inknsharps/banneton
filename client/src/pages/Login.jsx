@@ -3,8 +3,7 @@ import LoginContainer from "../components/Login/LoginContainer/LoginContainer";
 
 const Login = () => {
     return (
-        <div className="Login">
-            <h1>This is the Login page.</h1>
+        <div className="Login flex justify-center">
             <LoginContainer />
         </div>
     )

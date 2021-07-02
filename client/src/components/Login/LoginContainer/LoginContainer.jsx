@@ -44,11 +44,15 @@ const LoginContainer = () => {
     };
 
     return (
-        <div className="LoginContainer" name="login-form">
-            <h1>Log into an existing account here:</h1>
-            <LoginForm submitCallback={ handleLogin } />
-            <h1>Or sign up for a new account here:</h1>
-            <LoginCreate submitCallback={ handleLoginCreate } />
+        <div className="LoginContainer grid grid-row-2 gap-4 justify-items-center w-9/12 m-5" name="login-form">
+            <div className="bg-gray-200 rounded-xl w-1/4 p-5">
+                <h1 className="text-3xl">Log into an existing account here:</h1>
+                <LoginForm submitCallback={ handleLogin } />
+            </div>
+            <div className="bg-gray-200 rounded-xl w-1/4 p-5">
+                <h1 className="text-3xl">Or sign up for a new account here:</h1>
+                <LoginCreate submitCallback={ handleLoginCreate } />
+            </div>
         </div>
     )
 };
