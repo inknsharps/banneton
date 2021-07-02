@@ -36,14 +36,14 @@ const SearchForm = () => {
         const queryString = event.target[0].value;
         if (event.target[1].checked) {
             searchPosts("title", queryString)
-                .then(data => {console.log(data);setSearchResults(data)})
+                .then(data => setSearchResults(data))
             return;
-        }
+        };
         if (event.target[2].checked) {
             searchPosts("tag", queryString)
                 .then(data => setSearchResults(data))
             return;
-        }
+        };
     };
 
     return (
