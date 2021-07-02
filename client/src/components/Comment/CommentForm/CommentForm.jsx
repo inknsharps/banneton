@@ -18,10 +18,10 @@ const CommentForm = ({ postId, author, authorId }) => {
     };
 
     return (
-        <div className="CommentForm">
-            <form onSubmit={ handleSubmit }>
+        <div className="CommentForm m-5 w-5/12">
+            <form className="grid" onSubmit={ handleSubmit }>
                 <label>New Comment:</label>
-                <textarea></textarea>
+                <textarea className="border-2 border-gray-200"></textarea>
                 <ButtonDark type="submit" text="Submit Comment" />
             </form>
         </div>

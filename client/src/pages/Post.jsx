@@ -34,8 +34,12 @@ const Post = props => {
     return (
         <div className="Post">
             <PostContainer author={ post.author } date={ post.date } image={ post.image } ingredients={ ingredients } method={ post.method } tags={ tags } title={ post.title } />
-            { generateComments(comments) }
-            { userState.loggedIn ? <CommentForm postId={ postId } author={ userState.username } authorId={ userState._id } /> : null }
+            <div className="grid grid-col-1 justify-center">
+                { generateComments(comments) }
+            </div>
+            <div className="flex justify-center">
+                { userState.loggedIn ? <CommentForm postId={ postId } author={ userState.username } authorId={ userState._id } /> : null }
+            </div>
         </div>
     )
 };

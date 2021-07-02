@@ -10,7 +10,7 @@ const CommentContainer = ({ content, author, authorId, date, postId, commentId }
     const { userState } = useContext(UserContext);
 
     return (
-        <div className="CommentContainer">
+        <div className="CommentContainer bg-gray-200 rounded-xl m-3">
             <CommentHeader author={ author } date={ date } />
             <CommentBody content={ content } />
             { userState._id === authorId ? <CommentOptions postId={ postId } commentId={ commentId } /> : null }
