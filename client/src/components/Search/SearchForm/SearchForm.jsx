@@ -49,9 +49,13 @@ const SearchForm = () => {
     return (
         <div className="SearchForm">
             <form onSubmit={ handleSubmit }>
-                <FormInput labelName="Search:" htmlFor="search" inputType="text" placeholder="Type a query here..." />
-                <FormRadio labelName="Title" formName="search" htmlFor="search" defaultValue="title" defaultChecked={ true }/>
-                <FormRadio labelName="Tag" formName="search" htmlFor="search" defaultValue="tag" defaultChecked={ false } />
+                <div className="flex justify-center">
+                    <FormInput labelName="Search:" htmlFor="search" inputType="text" placeholder="Type a query here..." />
+                </div>
+                <div className="flex justify-center">
+                    <FormRadio labelName="Title" formName="search" htmlFor="search" defaultValue="title" defaultChecked={ true }/>
+                    <FormRadio labelName="Tag" formName="search" htmlFor="search" defaultValue="tag" defaultChecked={ false } />
+                </div>
                 <ButtonDark text="Search!" type="submit" />
             </form>
             <div className="flex justify-center">
