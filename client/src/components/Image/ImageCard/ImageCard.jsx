@@ -20,8 +20,8 @@ const ImageCard = ({ image, title, author, _id, authorId, method, tags, ingredie
             </a>
             <h2>{ title }</h2>
             <h3>By: { author }</h3>
-            { userState._id === authorId ? <ImageOptions _id={ _id } handleEditMode={ handleEditMode }/> : null }
-            { userState._id === authorId && editMode === true ? <UpdateContainer _id={ _id } title={ title } ingredients={ ingredients } method={ method } tags={ tags } /> : null }
+            { userState._id === authorId ? <ImageOptions _id={ _id } handleEditMode={ handleEditMode } /> : null }
+            { userState._id === authorId && editMode === true ? <UpdateContainer _id={ _id } title={ title } ingredients={ ingredients } method={ method } tags={ tags } setEditMode={ setEditMode } /> : null }
         </div>
     )
 };

@@ -5,6 +5,7 @@ import ButtonDark from "../../Button/ButtonDark/ButtonDark";
 import UserContext from "../../../contexts/UserContext";
 import UserPostContext from "../../../contexts/UserPostContext";
 import { postNewPost } from "../../../utils/API";
+import { clearForm } from "../../../utils/clearForm";
 
 const UploadForm = () => {
     const { userState } = useContext(UserContext);
@@ -12,6 +13,7 @@ const UploadForm = () => {
 
     const handleSubmit = event => {
         event.preventDefault();
+        console.log(event)
 
         // Luckily the synthetic event handler gives us the target, which is the form itself, which means it can be passed to the FormData() constructor
         const formData = new FormData(event.target);
@@ -23,6 +25,7 @@ const UploadForm = () => {
         postNewPost(formData)
             .then(response => setUserPosts(response))
             .catch(error => console.log(error));
+        clearForm(event.target, 4);
     };
 
     return (

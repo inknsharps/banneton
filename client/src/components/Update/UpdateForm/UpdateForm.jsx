@@ -6,7 +6,7 @@ import UserPostContext from "../../../contexts/UserPostContext";
 
 import { updatePost } from "../../../utils/API";
 
-const UpdateForm = ({ title, method, ingredients, tags, _id }) => {
+const UpdateForm = ({ title, method, ingredients, tags, _id, setEditMode }) => {
     const { setUserPosts } = useContext(UserPostContext);
 
     const handleSubmit = event => {
@@ -20,6 +20,8 @@ const UpdateForm = ({ title, method, ingredients, tags, _id }) => {
         updatePost(_id, formData)
             .then(data => setUserPosts(data))
             .catch(error => console.log(error));
+            
+        setEditMode(false);
     };
 
     return (

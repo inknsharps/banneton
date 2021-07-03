@@ -3,6 +3,7 @@ import ButtonDark from "../../Button/ButtonDark/ButtonDark";
 
 import UserPostContext from "../../../contexts/UserPostContext";
 import { putComment } from "../../../utils/API";
+import { clearForm } from "../../../utils/clearForm";
 
 const CommentForm = ({ postId, author, authorId }) => {
     const { setUserPosts } = useContext(UserPostContext);
@@ -20,6 +21,7 @@ const CommentForm = ({ postId, author, authorId }) => {
         putComment(formData)
             .then(response => setUserPosts(response))
             .catch(error => console.log(error));
+        clearForm(event.target, 1);
     };
 
     return (
