@@ -6,7 +6,7 @@ const PostIngredients = ({ ingredients }) => {
     };
     return (
         <div className="PostIngredients">
-            <h2>Ingredients:</h2>
+            <h2 className="text-xl bg-gray-300 p-5 m-5">Ingredient List:</h2>
             <ul>               
                 { generateIngredients(ingredients) }
             </ul>

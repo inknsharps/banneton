@@ -9,7 +9,7 @@ import PostTags from "../PostTags/PostTags";
 // Pass in all the post information from the getSinglePost API call
 const PostContainer = ({ author, date, image, ingredients, method, tags, title }) => {
     return (
-        <div className="PostContainer m-5">
+        <div className="PostContainer m-5 bg-indigo-300">
             <PostHeader author={ author } title={ title } date={ date } />
             <div className="grid grid-cols-2">
                 <PostImage image={ image } title={ title } />
