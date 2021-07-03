@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import ButtonDark from "../../Button/ButtonDark/ButtonDark";
 
+import UserPostContext from "../../../contexts/UserPostContext";
 import { putComment } from "../../../utils/API";
 
 const CommentForm = ({ postId, author, authorId }) => {
+    const { setUserPosts } = useContext(UserPostContext);
+
     const handleSubmit = event => {
         event.preventDefault();
         const formData = {
@@ -14,7 +17,9 @@ const CommentForm = ({ postId, author, authorId }) => {
                 content: event.target[0].value
             }
         };
-        putComment(formData);
+        putComment(formData)
+            .then(response => setUserPosts(response))
+            .catch(error => console.log(error));
     };
 
     return (

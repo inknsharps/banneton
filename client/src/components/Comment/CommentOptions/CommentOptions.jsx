@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 
+import UserPostContext from "../../../contexts/UserPostContext";
 import { deleteComment } from "../../../utils/API";
 
 const CommentOptions = ({ postId, commentId }) => {
+    const { setUserPosts } = useContext(UserPostContext);
+
     const handleDelete = event => {
         event.stopPropagation();
         const deleteRequestObject = {
@@ -10,7 +13,7 @@ const CommentOptions = ({ postId, commentId }) => {
             commentId: commentId
         };
         deleteComment(deleteRequestObject)
-            .then(response => console.log(response))
+            .then(response => setUserPosts(response))
             .catch(error => console.error(error));
     };
 
