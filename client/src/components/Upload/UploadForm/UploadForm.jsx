@@ -2,11 +2,13 @@ import React, { useContext } from "react";
 import FormInput from "../../Form/FormInput/FormInput";
 import ButtonDark from "../../Button/ButtonDark/ButtonDark";
 
-import { postNewPost } from "../../../utils/API";
 import UserContext from "../../../contexts/UserContext";
+import UserPostContext from "../../../contexts/UserPostContext";
+import { postNewPost } from "../../../utils/API";
 
 const UploadForm = () => {
     const { userState } = useContext(UserContext);
+    const { setUserPosts } = useContext(UserPostContext);
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -18,7 +20,9 @@ const UploadForm = () => {
         formData.append("author", userState.username);
         formData.append("authorId", userState._id);
 
-        postNewPost(formData);
+        postNewPost(formData)
+            .then(response => setUserPosts(response))
+            .catch(error => console.log(error));
     };
 
     return (
