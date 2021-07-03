@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import FormInput from "../../Form/FormInput/FormInput";
 import ButtonDark from "../../Button/ButtonDark/ButtonDark";
+
+import UserPostContext from "../../../contexts/UserPostContext";
 
 import { updatePost } from "../../../utils/API";
 
 const UpdateForm = ({ title, method, ingredients, tags, _id }) => {
+    const { setUserPosts } = useContext(UserPostContext);
+
     const handleSubmit = event => {
         event.preventDefault();
         const formData = {
@@ -13,7 +17,9 @@ const UpdateForm = ({ title, method, ingredients, tags, _id }) => {
             method: event.target[2].value,
             tags: event.target[3].value,
         };
-        updatePost(_id, formData);
+        updatePost(_id, formData)
+            .then(data => setUserPosts(data))
+            .catch(error => console.log(error));
     };
 
     return (

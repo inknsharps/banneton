@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { HashRouter as Router, Route, Switch, Redirect } from "react-router-dom"; // Setting this to hashrouter for convenience for the time being
 
 import NavbarContainer from "./components/Navbar/NavbarContainer/NavbarContainer";
@@ -11,10 +11,12 @@ import Dashboard from "./pages/Dashboard";
 import Post from "./pages/Post";
 
 import UserContext from "./contexts/UserContext";
+import UserPostContext from "./contexts/UserPostContext";
 import useLogin from "./hooks/useLogin";
 
 const App = () => {
     const [ userState, logInUser, logOutUser ] = useLogin();
+    const [ userPosts, setUserPosts ] = useState([]);
 
     useEffect(() => {
         const username = sessionStorage.getItem("username");
@@ -28,24 +30,26 @@ const App = () => {
     return (
         <Router>
             <UserContext.Provider value={ { userState, logInUser, logOutUser } }>
-                <div className="App">
-                    <NavbarContainer />
-                    <Switch>
-                        <Route exact path="/" component={ Home } />
-                        <Route exact path="/login">
-                            { userState.loggedIn ? <Redirect to="/" /> : <Login /> }
-                        </Route>
-                        <Route exact path="/logout">
-                            { !userState.loggedIn ? <Redirect to="/" /> : <Logout /> }
-                        </Route>
-                        <Route exact path="/search" component={ Search } />
-                        <Route exact path="/signup" component={ Signup } />
-                        <Route exact path="/dashboard">
-                            { !userState.loggedIn ? <Redirect to="/" /> : <Dashboard /> }
-                        </Route>
-                        <Route path="/:post" component={ Post } />
-                    </Switch>
-                </div>
+                <UserPostContext.Provider value={ { userPosts, setUserPosts } }>
+                    <div className="App">
+                        <NavbarContainer />
+                        <Switch>
+                            <Route exact path="/" component={ Home } />
+                            <Route exact path="/login">
+                                { userState.loggedIn ? <Redirect to="/" /> : <Login /> }
+                            </Route>
+                            <Route exact path="/logout">
+                                { !userState.loggedIn ? <Redirect to="/" /> : <Logout /> }
+                            </Route>
+                            <Route exact path="/search" component={ Search } />
+                            <Route exact path="/signup" component={ Signup } />
+                            <Route exact path="/dashboard">
+                                { !userState.loggedIn ? <Redirect to="/" /> : <Dashboard /> }
+                            </Route>
+                            <Route path="/:post" component={ Post } />
+                        </Switch>
+                    </div>
+                </UserPostContext.Provider>
             </UserContext.Provider>
         </Router>
     )
