@@ -5,8 +5,8 @@ const PostIngredients = ({ ingredients }) => {
         return ingredientArray.map((ingredient, index) => <li key={ index }>{ ingredient }</li>)
     };
     return (
-        <div className="PostIngredients">
-            <h2 className="text-xl bg-gray-300 p-5 m-5">Ingredient List:</h2>
+        <div className="PostIngredients m-5">
+            <h2 className="text-2xl text-left font-medium border-b-2 border-gray-200 p-5 m-5">Ingredient List:</h2>
             <ul>               
                 { generateIngredients(ingredients) }
             </ul>

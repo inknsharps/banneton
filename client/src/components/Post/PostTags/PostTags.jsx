@@ -6,7 +6,7 @@ const PostTags = ({ tags }) => {
     };
     return (
         <div className="PostTags p-5">
-            <h2 className="text-xl bg-gray-300 p-5 m-5">Tags:</h2>
+            <h2 className="text-2xl text-left font-medium border-b-2 border-gray-200 p-5 m-5">Tags:</h2>
             <ul className="flex justify-evenly">
                 { generateTags(tags) }
             </ul>
