@@ -14,7 +14,7 @@ const ImageOptions = ({ _id, handleEditMode }) => {
     };
 
     return (
-        <div className="ImageOptions flex justify-evenly">
+        <div className="ImageOptions flex justify-evenly pt-5">
             <ButtonLight text="Edit Post" type="button" callback={ handleEditMode } />
             <ButtonLight text="Delete Post" type="button" callback={ handleDelete } data={ _id }/>
         </div>

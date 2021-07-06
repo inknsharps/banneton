@@ -12,8 +12,8 @@ const PostContainer = ({ author, date, image, ingredients, method, tags, title }
         <div className="PostContainer m-5 bg-indigo-300">
             <PostHeader author={ author } title={ title } date={ date } />
             <div className="grid grid-cols-2">
-                <PostImage image={ image } title={ title } />
                 <PostIngredients ingredients={ ingredients } />
+                <PostImage image={ image } title={ title } />
                 <PostMethod method={ method } />
             </div>
             <PostTags tags={ tags } />
