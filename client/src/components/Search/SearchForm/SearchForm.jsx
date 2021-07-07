@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { SearchResultLarge, SearchResultSmall } from "../SearchResult/SearchResult";
-import FormInput from "../../Form/FormInput/FormInput";
 import FormRadio from "../../Form/FormRadio/FormRadio";
 import ButtonDark from "../../Button/ButtonDark/ButtonDark";
 
@@ -48,23 +47,27 @@ const SearchForm = () => {
 
     return (
         <div className="SearchForm">
-            <form onSubmit={ handleSubmit }>
-                <div className="flex justify-center">
-                    <FormInput labelName="Search:" htmlFor="search" inputType="text" placeholder="Type a query here..." />
+            <form className="bg-gray-200 bg-opacity-50 rounded-lg p-5" onSubmit={ handleSubmit }>
+                <div className="flex flex-col justify-center">
+                    <label className="text-left text-xl border-b-2 border-gray-200 m-2 p-2" htmlFor="search">Search:</label>
+                    <input className="text-center w-full m-2 p-2"></input>
                 </div>
-                <div className="flex justify-center">
+                <div className="flex justify-evenly">
                     <FormRadio labelName="Title" formName="search" htmlFor="search" defaultValue="title" defaultChecked={ true }/>
                     <FormRadio labelName="Tag" formName="search" htmlFor="search" defaultValue="tag" defaultChecked={ false } />
                 </div>
                 <ButtonDark text="Search!" type="submit" />
             </form>
-            <div className="flex justify-center">
+            <div className="flex flex-col justify-center">
                 {
                     searchResults === undefined || !searchResults[0]
                         ? null 
-                        : <div className="grid gap-1 grid-cols-4 grid-rows-4 max-w-7xl bg-gray-200 p-2">
-                            { generateSearchResults(searchResults) }
-                        </div>
+                        : <>
+                            <h3 className="text-3xl border-b-2 border-gray-200 p-2 m-2">Results:</h3>
+                            <div className="grid gap-1 grid-cols-4 grid-rows-4 max-w-7xl bg-gray-200 p-3 m-5">
+                                { generateSearchResults(searchResults) }
+                            </div>
+                        </>
                 }
             </div>
         </div>

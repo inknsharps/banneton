@@ -16,9 +16,9 @@ const Logout = () => {
     }, []);
 
     return (
-        <div className="Logout">
-            <h1>You have been logged out.</h1>
-            <p>Redirecting to main page...</p>
+        <div className="Logout p-5 m-5">
+            <h1 className="text-7xl">You have been logged out.</h1>
+            <p className="text-xl p-2 m-2">Redirecting to main page...</p>
         </div>
     )
 };
