@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import ButtonLight from "../../Button/ButtonLight/ButtonLight";
 
 import UserPostContext from "../../../contexts/UserPostContext";
 import { deleteComment } from "../../../utils/API";
@@ -18,7 +19,7 @@ const CommentOptions = ({ postId, commentId }) => {
     };
 
     return (
-        <div className="CommentOptions">
+        <div className="CommentOptions self-center mr-5">
             <button onClick={ handleDelete }> X </button>
         </div>
     )
