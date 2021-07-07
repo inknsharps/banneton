@@ -35,7 +35,9 @@ const UploadForm = () => {
             <FormTextarea labelName="Ingredients:" htmlFor="ingredients" placeholder="Separate ingredients with spaces..." rows={4} cols={30} />
             <FormTextarea labelName="Method:" htmlFor="method" rows={4} cols={30} />
             <FormTextarea labelName="Tags:" htmlFor="tags" placeholder="Separate tags with spaces..." rows={1} cols={30} />
-            <FormInput labelName="Image:" htmlFor="image" placeholder="Image" inputType="file" />
+            <div className="col-span-2 p-2 m-2">
+                <FormInput labelName="Image:" htmlFor="image" placeholder="Image" inputType="file" />
+            </div>
             <div className="col-span-2 p-2 m-2">
                 <ButtonDark type="submit" text="Submit" />
             </div>
