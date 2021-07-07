@@ -14,12 +14,12 @@ const ImageCard = ({ image, title, author, _id, authorId, method, tags, ingredie
     };
 
     return (
-        <div className="ImageCard border border-indigo-300 p-5 rounded-md">
+        <div className="ImageCard border border-indigo-300 transition duration-500 ease-in-out hover:bg-gray-200 hover:bg-opacity-50 p-5 rounded-md shadow-lg">
             <a href={`/#/${_id}`}> {/* Current this uses a hash router link- consider changing if the router changes */}
-                <img src={ image } alt={ title } />
+                <img className="rounded-lg" src={ image } alt={ title } />
+                <h3 className="text-left text-md font-thin italic border-b-2 border-gray-200 p-2">By: { author }</h3>
+                <h2 className="text-lg text-right font-semibold p-2">{ title }</h2>
             </a>
-            <h2 className="p-2 bg-indigo-400 text-lg text-white">{ title }</h2>
-            <h3 className="p-2 bg-gray-200">By: { author }</h3>
             { userState._id === authorId ? <ImageOptions _id={ _id } handleEditMode={ handleEditMode } /> : null }
             { userState._id === authorId && editMode === true ? <UpdateContainer _id={ _id } title={ title } ingredients={ ingredients } method={ method } tags={ tags } setEditMode={ setEditMode } /> : null }
         </div>
