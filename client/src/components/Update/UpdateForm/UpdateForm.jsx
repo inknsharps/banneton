@@ -25,12 +25,14 @@ const UpdateForm = ({ title, method, ingredients, tags, _id, setEditMode }) => {
     };
 
     return (
-        <form className="UpdateForm" onSubmit={ handleSubmit }>
+        <form className="UpdateForm p-2 m-2" onSubmit={ handleSubmit }>
             <FormInput labelName="Title:" htmlFor="title" placeholder="Title" defaultValue={ title } />
             <FormInput labelName="Ingredients:" htmlFor="ingredients" placeholder="Ingredients" defaultValue={ ingredients } />
             <FormInput labelName="Method:" htmlFor="method" placeholder="Method" defaultValue={ method } />
             <FormInput labelName="Tags:" htmlFor="tags" placeholder="Tags" defaultValue={ tags } />
-            <ButtonDark type="submit" text="Submit" />
+            <div className="pt-2 mt-2">
+                <ButtonDark type="submit" text="Submit" />
+            </div>
         </form>
     )
 };
