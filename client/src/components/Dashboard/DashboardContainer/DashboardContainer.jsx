@@ -35,7 +35,7 @@ const DashboardContainer = () => {
     };
 
     return (
-        <div className="DashboardContainer grid grid-cols-3 gap-1">
+        <div className="DashboardContainer grid grid-cols-3 gap-3">
             { generatePosts(currentPosts) }
         </div>
     )

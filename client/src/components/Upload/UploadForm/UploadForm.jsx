@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import FormInput from "../../Form/FormInput/FormInput";
+import FormTextarea from "../../Form/FormTextarea/FormTextarea";
 import ButtonDark from "../../Button/ButtonDark/ButtonDark";
 
 import UserContext from "../../../contexts/UserContext";
@@ -29,13 +30,15 @@ const UploadForm = () => {
     };
 
     return (
-        <form className="UploadForm bg-gray-100 p-12" name="upload-form" encType="multipart/form-data" onSubmit={ handleSubmit }>
-            <FormInput labelName="Title:" htmlFor="title" placeholder="Title" />
-            <FormInput labelName="Ingredients:" htmlFor="ingredients" placeholder="Ingredients" />
-            <FormInput labelName="Method:" htmlFor="method" placeholder="Method" />
-            <FormInput labelName="Tags:" htmlFor="tags" placeholder="Tags" />
+        <form className="UploadForm grid grid-cols-2 bg-gray-100 rounded-md p-5 m-5" name="upload-form" encType="multipart/form-data" onSubmit={ handleSubmit }>
+            <FormTextarea labelName="Title:" htmlFor="title" rows={1} cols={30} />
+            <FormTextarea labelName="Ingredients:" htmlFor="ingredients" placeholder="Separate ingredients with spaces..." rows={4} cols={30} />
+            <FormTextarea labelName="Method:" htmlFor="method" rows={4} cols={30} />
+            <FormTextarea labelName="Tags:" htmlFor="tags" placeholder="Separate tags with spaces..." rows={1} cols={30} />
             <FormInput labelName="Image:" htmlFor="image" placeholder="Image" inputType="file" />
-            <ButtonDark type="submit" text="Submit" />
+            <div className="col-span-2 p-2 m-2">
+                <ButtonDark type="submit" text="Submit" />
+            </div>
         </form>
     )
 };
