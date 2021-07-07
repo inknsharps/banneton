@@ -38,7 +38,7 @@ const UploadForm = () => {
             <div className="col-span-2 p-2 m-2">
                 <FormInput labelName="Image:" htmlFor="image" placeholder="Image" inputType="file" />
             </div>
-            <div className="col-span-2 p-2 m-2">
+            <div className="border-t-2 border-gray-300 col-span-2 pt-6 m-2">
                 <ButtonDark type="submit" text="Submit" />
             </div>
         </form>
