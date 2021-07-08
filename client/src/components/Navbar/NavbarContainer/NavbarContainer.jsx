@@ -33,14 +33,14 @@ const NavbarContainer = () => {
             </nav>
             { navToggle 
                 ? <div className="absolute text-white bg-indigo-600 rounded-b-lg px-2 mx-2">
-                    <ul className="flex justify-evenly px-24 border-b-2 border-white">
-                        { !userState.loggedIn ? <NavbarLi name="Login" link="/login" onClick={ () => handleLinkClick } /> : <NavbarLi name="Logout" link="/logout" /> }
-                    </ul>
-                    <ul className="flex justify-evenly px-24 border-b-2">
-                        <NavbarLi name="Search" link="/search"/>
-                    </ul>
                     <ul className="flex justify-evenly px-24">
-                        { userState.loggedIn ? <NavbarLi name="Dashboard" link="/dashboard" /> : null }
+                        { !userState.loggedIn ? <NavbarLi name="Login" link="/login" onClickFunc={ handleLinkClick } /> : <NavbarLi name="Logout" link="/logout" onClickFunc={ handleLinkClick } /> }
+                    </ul>
+                    <ul className="flex justify-evenly border-t-2 border-white px-24">
+                        { userState.loggedIn ? <NavbarLi name="Dashboard" link="/dashboard" onClickFunc={ handleLinkClick } /> : null }
+                    </ul>
+                    <ul className="flex justify-evenly border-t-2 border-white px-24">
+                        <NavbarLi name="Search" link="/search" onClickFunc={ handleLinkClick } />
                     </ul>
                 </div>
                 : null
