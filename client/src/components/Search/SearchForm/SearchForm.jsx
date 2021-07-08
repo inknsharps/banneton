@@ -35,12 +35,17 @@ const SearchForm = () => {
         const queryString = event.target[0].value;
         if (event.target[1].checked) {
             searchPosts("title", queryString)
-                .then(data => setSearchResults(data))
+                .then(data => setSearchResults(data));
             return;
         };
         if (event.target[2].checked) {
             searchPosts("tag", queryString)
-                .then(data => setSearchResults(data))
+                .then(data => setSearchResults(data));
+            return;
+        };
+        if (event.target[3].checked) {
+            searchPosts("ingredient", queryString)
+                .then(data => setSearchResults(data));
             return;
         };
     };
@@ -55,6 +60,7 @@ const SearchForm = () => {
                 <div className="flex justify-evenly">
                     <FormRadio labelName="Title" formName="search" htmlFor="search" defaultValue="title" defaultChecked={ true }/>
                     <FormRadio labelName="Tag" formName="search" htmlFor="search" defaultValue="tag" defaultChecked={ false } />
+                    <FormRadio labelName="Ingredient" formName="search" htmlFor="search" defaultValue="ingredient" defaultChecked={ false } />
                 </div>
                 <ButtonDark text="Search!" type="submit" />
             </form>

@@ -69,6 +69,7 @@ const postSchema = new Schema({
 postSchema.plugin(fuzzy, {
     fields: {
         title_tg: "title",
+        ingredients_tg: doc => doc.get("ingredients").join(" "),
         tags_tg: doc => doc.get("tags").join(" ")
     }
 });
