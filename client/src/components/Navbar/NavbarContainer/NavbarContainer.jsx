@@ -25,18 +25,21 @@ const NavbarContainer = () => {
                     <i className="fas fa-bars fa-2x"></i>
                 </a>
                 <NavLink to="/">
-                    <h1 className="p-5 text-3xl">Banneton</h1>
+                    <div className="flex justify-end">
+                        <img className="w-1/12 h-1/12" src="./banneton_white.svg"></img>
+                        <h1 className="p-5 text-3xl">Banneton</h1>
+                    </div>
                 </NavLink>
             </nav>
             { navToggle 
-                ? <div className="fixed text-white bg-indigo-600">
-                    <ul className="flex justify-evenly px-24">
+                ? <div className="absolute text-white bg-indigo-600 rounded-b-lg px-2 mx-2">
+                    <ul className="flex justify-evenly px-24 border-b-2 border-white">
                         { !userState.loggedIn ? <NavbarLi name="Login" link="/login" onClick={ () => handleLinkClick } /> : <NavbarLi name="Logout" link="/logout" /> }
                     </ul>
-                    <ul className="flex justify-evenly">
+                    <ul className="flex justify-evenly px-24 border-b-2">
                         <NavbarLi name="Search" link="/search"/>
                     </ul>
-                    <ul className="flex justify-evenly">
+                    <ul className="flex justify-evenly px-24">
                         { userState.loggedIn ? <NavbarLi name="Dashboard" link="/dashboard" /> : null }
                     </ul>
                 </div>
