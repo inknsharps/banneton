@@ -25,7 +25,7 @@ const NavbarContainer = () => {
                     <i className="fas fa-bars fa-2x"></i>
                 </a>
                 <NavLink to="/">
-                    <div className="flex justify-end">
+                    <div className="flex justify-end" onClick={ handleLinkClick }>
                         <img className="w-1/12 h-1/12" src="./banneton_white.svg"></img>
                         <h1 className="p-5 text-3xl">Banneton</h1>
                     </div>

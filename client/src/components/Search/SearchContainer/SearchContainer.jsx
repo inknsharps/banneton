@@ -3,7 +3,7 @@ import SearchForm from "../SearchForm/SearchForm";
 
 const SearchContainer = () => {
     return (
-        <div className="SearchContainer ring-1 ring-gray-200 ring-offset-4 rounded-lg w-9/12 p-5">
+        <div className="SearchContainer bg-white ring-1 ring-gray-200 ring-offset-4 rounded-lg w-9/12 p-5">
             <SearchForm />
         </div>
     )

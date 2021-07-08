@@ -31,7 +31,7 @@ const App = () => {
         <Router>
             <UserContext.Provider value={ { userState, logInUser, logOutUser } }>
                 <UserPostContext.Provider value={ { userPosts, setUserPosts } }>
-                    <div className="App">
+                    <div className="App bg-gradient-to-br from-white via-gray-100 to-indigo-200 pb-5 min-h-screen">
                         <NavbarContainer />
                         <Switch>
                             <Route exact path="/" component={ Home } />
