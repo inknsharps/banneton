@@ -31,4 +31,20 @@ router.get("/tag/:tag", cors(), async (req, res) => {
     }
 });
 
+router.get("/ingredient/:ingredient", cors(), async (req, res) => {
+    try {
+        const result = await Post.find({
+            ingredients: { 
+                $elemMatch: { 
+                    $in: req.params.ingredient
+                }
+            }
+        });
+        console.log(result);
+        res.json(result);
+    } catch (error) {
+        res.status(500).json(error);
+    }
+});
+
 module.exports = router;
