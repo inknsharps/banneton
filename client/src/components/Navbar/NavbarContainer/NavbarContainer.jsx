@@ -36,11 +36,17 @@ const NavbarContainer = () => {
                     <ul className="flex justify-evenly px-24">
                         { !userState.loggedIn ? <NavbarLi name="Login" link="/login" onClickFunc={ handleLinkClick } /> : <NavbarLi name="Logout" link="/logout" onClickFunc={ handleLinkClick } /> }
                     </ul>
-                    <ul className="flex justify-evenly border-t-2 border-white px-24">
-                        { userState.loggedIn ? <NavbarLi name="Dashboard" link="/dashboard" onClickFunc={ handleLinkClick } /> : null }
-                    </ul>
+                    { userState.loggedIn 
+                        ? <ul className="flex justify-evenly border-t-2 border-white px-24">
+                            <NavbarLi name="Dashboard" link="/dashboard" onClickFunc={ handleLinkClick } />
+                        </ul>
+                        : null
+                    }
                     <ul className="flex justify-evenly border-t-2 border-white px-24">
                         <NavbarLi name="Search" link="/search" onClickFunc={ handleLinkClick } />
+                    </ul>
+                    <ul className="flex justify-evenly border-t-2 border-white px-24">
+                        <NavbarLi name="Tools" link="/tools" onClickFunc={ handleLinkClick } />
                     </ul>
                 </div>
                 : null
