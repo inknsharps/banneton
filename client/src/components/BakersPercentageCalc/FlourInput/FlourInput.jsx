@@ -6,7 +6,7 @@ const FlourInput = () => {
     const { flourWeight, setFlourWeight } = useContext(BakersPercentageContext);
 
     return (
-        <div className="FlourInput">
+        <div className="FlourInput grid grid-cols-4">
             <label>Flour Weight:</label>
             <input className="border-2 border-gray-200" defaultValue={ flourWeight } onChange={ event => setFlourWeight(event.target.value) }></input>
         </div>

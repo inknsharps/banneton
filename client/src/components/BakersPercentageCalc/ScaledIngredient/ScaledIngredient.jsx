@@ -8,10 +8,10 @@ const ScaledIngredient = ({ labelName, percentage }) => {
     const scaledWeight = scaledFlourWeight * percentage;
 
     return (
-        <div className="ScaledIngredient">
+        <>
             <h3>{ labelName }</h3>
             <h3>{ scaledWeight }</h3>
-        </div>
+        </>
     )
 };
 
