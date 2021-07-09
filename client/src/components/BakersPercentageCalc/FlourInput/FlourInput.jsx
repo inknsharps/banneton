@@ -8,7 +8,7 @@ const FlourInput = () => {
     return (
         <div className="FlourInput">
             <label>Flour Weight:</label>
-            <input className="border-2 border-gray-200" defaultValue={ flourWeight } onChange={ event => setFlourWeight(parseInt(event.target.value)) }></input>
+            <input className="border-2 border-gray-200" defaultValue={ flourWeight } onChange={ event => setFlourWeight(event.target.value) }></input>
         </div>
     )
 };

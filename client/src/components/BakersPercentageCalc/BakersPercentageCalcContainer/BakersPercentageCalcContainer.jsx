@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import FlourInput from "../FlourInput/FlourInput";
 import IngredientInput from "../IngredientInput/IngredientInput";
+import PercentageDisplay from "../PercentageDisplay/PercentageDisplay";
 
 import BakersPercentageContext from "../../../contexts/BakersPercentageContext";
 
@@ -17,20 +18,27 @@ const BakersPercentageCalcContainer = () => {
     };
 
     const generateIngredientInputs = ingredients => {
-        return ingredients.map(ingredient => <IngredientInput key={ ingredient.name } labelName={ ingredient.name } defaultValue={ ingredient.value } />)
+        return ingredients.map(ingredient => {
+            return ( 
+                <div key={ ingredient.name }>
+                    <IngredientInput labelName={ ingredient.name } defaultValue={ ingredient.value } />
+                    <PercentageDisplay labelName={ ingredient.name } value={ ingredient.value } />
+                </div>
+            )
+        })
     };
 
     return (
-        <BakersPercentageContext.Provider value={ { flourWeight, setFlourWeight, ingredients } }>
+        <BakersPercentageContext.Provider value={ { flourWeight, setFlourWeight, ingredients, setIngredients } }>
             <div className="BakersPercentageCalcContainer">
                 <FlourInput value={ flourWeight } />
                 { generateIngredientInputs(ingredients) }
                 <form onSubmit={ event => addIngredient(ingredients, event.target[0].value, event.target[1].value) }>
-                <label>Ingredient Name</label>
-                <input></input>
-                <label>Ingrdient Amount</label>
-                <input></input>
-                <button type="submit">Add Ingredient!</button>
+                    <label>Ingredient Name</label>
+                    <input></input>
+                    <label>Ingredient Amount</label>
+                    <input></input>
+                    <button type="submit">Add Ingredient!</button>
                 </form>
             </div>
         </BakersPercentageContext.Provider>
