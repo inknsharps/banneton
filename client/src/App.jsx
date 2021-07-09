@@ -9,6 +9,7 @@ import Search from "./pages/Search";
 import Signup from "./pages/Signup";
 import Dashboard from "./pages/Dashboard";
 import Post from "./pages/Post";
+import Tools from "./pages/Tools";
 
 import UserContext from "./contexts/UserContext";
 import UserPostContext from "./contexts/UserPostContext";
@@ -46,6 +47,7 @@ const App = () => {
                             <Route exact path="/dashboard">
                                 { !userState.loggedIn ? <Redirect to="/" /> : <Dashboard /> }
                             </Route>
+                            <Route exact path="/tools" component={ Tools } />
                             <Route path="/:post" component={ Post } />
                         </Switch>
                     </div>
