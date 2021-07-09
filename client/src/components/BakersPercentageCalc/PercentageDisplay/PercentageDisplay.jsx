@@ -9,7 +9,7 @@ const PercentageDisplay = ({ labelName, value }) => {
 
     return (
         <div className="PercentageDisplay">
-            <h3>{ labelName }:</h3>{ percentage }
+            <h3>{ labelName }: { percentage }</h3>
         </div>
     )
 };
