@@ -7,7 +7,7 @@ import ScaledIngredient from "../ScaledIngredient/ScaledIngredient";
 
 import BakersPercentageContext from "../../../contexts/BakersPercentageContext";
 
-const BakersPercentageCalcContainer = () => {
+const BakersPercentageCalculator = () => {
     const [ flourWeight, setFlourWeight ] = useState(100);
     const [ ingredients, setIngredients ] = useState([]);
     const [ scaledFlourWeight, setScaledFlourWeight ] = useState(1000);
@@ -86,4 +86,4 @@ const BakersPercentageCalcContainer = () => {
     )
 };
 
-export default BakersPercentageCalcContainer;
+export default BakersPercentageCalculator;

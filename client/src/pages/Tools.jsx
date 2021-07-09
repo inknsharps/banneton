@@ -1,10 +1,10 @@
 import React from "react";
-import BakersPercentageCalcContainer from "../components/BakersPercentageCalc/BakersPercentageCalcContainer/BakersPercentageCalcContainer";
+import BakersPercentageCalculator from "../components/BakersPercentageCalc/BakersPercentageCalculator/BakersPercentageCalculator";
 
 const Tools = () => {
     return (
         <div className="Tools">
-            <BakersPercentageCalcContainer />
+            <BakersPercentageCalculator />
         </div>
     )
 };
