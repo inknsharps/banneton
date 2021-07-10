@@ -8,7 +8,7 @@ const ScaledFlourInput = () => {
     return (
         <div className="ScaledFlourInput grid grid-cols-2">
             <label>Scaled Flour Weight:</label>
-            <input className="border-2 border-gray-200" defaultValue={ scaledFlourWeight } onChange={ event => setScaledFlourWeight(event.target.value) }></input>
+            <input className="border-2 border-gray-200 text-center" defaultValue={ scaledFlourWeight } onChange={ event => setScaledFlourWeight(event.target.value) }></input>
         </div>
     )
 };

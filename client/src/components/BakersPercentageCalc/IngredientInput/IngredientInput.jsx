@@ -21,7 +21,7 @@ const IngredientInput = ({ labelName, defaultValue }) => {
     return (
         <>
             <label>{ labelName }</label>
-            <input className="border-2 border-gray-200" value={ defaultValue } onChange={ event => updateIngredientValue(ingredients, scaledIngredients, labelName, event.target.value) }></input>
+            <input className="border-2 border-gray-200 text-center" value={ defaultValue } onChange={ event => updateIngredientValue(ingredients, scaledIngredients, labelName, event.target.value) }></input>
         </>
     )
 };
