@@ -1,7 +1,7 @@
 import axios from "../../_snowpack/pkg/axios.js";
 
 // Change this later once we get out of development
-const baseURL = "http://localhost:3001";
+const baseURL = window.location.hostname;
 
 export const postLogin = async loginData => {
     try {
