@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="279.28125"
+   height="278.39844"
+   viewBox="0 0 73.893163 73.659588"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   sodipodi:docname="banneton.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="1.0482005"
+     inkscape:cx="-84.430413"
+     inkscape:cy="-80.614349"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     units="px"
+     width="100px"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-54.973389,-109.23312)">
+    <path
+       id="path285"
+       style="display:inline;fill:#FFFFFF;stroke-width:0.999999"
+       d="M 347.41406,412.84961 A 139.64037,139.64037 0 0 0 207.77344,552.49023 139.64037,139.64037 0 0 0 332.61914,691.24805 113.33131,113.33131 0 0 1 252.29688,582.84766 113.33131,113.33131 0 0 1 365.62891,469.51562 113.33131,113.33131 0 0 1 478.95898,582.84766 113.33131,113.33131 0 0 1 476.6582,605.21094 139.64037,139.64037 0 0 0 487.05469,552.49023 139.64037,139.64037 0 0 0 347.41406,412.84961 Z M 372.375,496.5 a 94.442766,94.442766 0 0 0 -94.44336,94.44141 94.442766,94.442766 0 0 0 94.44336,94.44336 94.442766,94.442766 0 0 0 15.18945,-1.26563 56.665657,56.665657 0 0 1 -44.87304,-55.40039 56.665657,56.665657 0 0 1 56.66601,-56.66602 56.665657,56.665657 0 0 1 56.66602,56.66602 56.665657,56.665657 0 0 1 -0.44336,6.76758 94.442766,94.442766 0 0 0 11.23633,-44.54492 A 94.442766,94.442766 0 0 0 372.375,496.5 Z"
+       transform="scale(0.26458333)" />
+  </g>
+</svg>
