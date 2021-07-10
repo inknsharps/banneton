@@ -1,11 +1,8 @@
 import axios from "../../_snowpack/pkg/axios.js";
 
-// Change this later once we get out of development
-const baseURL = window.location.hostname;
-
 export const postLogin = async loginData => {
     try {
-        const user = await axios.post(`${baseURL}/api/users/login`, loginData);
+        const user = await axios.post(`/api/users/login`, loginData);
         return user.data;
     } catch (error) {
         console.log("Error with login request to API!", error);
@@ -14,7 +11,7 @@ export const postLogin = async loginData => {
 
 export const createLogin = async newUserData => {
     try {
-        const newUser = await axios.post(`${baseURL}/api/users/`, newUserData);
+        const newUser = await axios.post(`/api/users/`, newUserData);
         console.log("Successfully POSTED:", newUser);
         return newUser.data;
     } catch (error) {
@@ -24,7 +21,7 @@ export const createLogin = async newUserData => {
 
 export const postLogout = async () => {
     try {
-        const logout = await axios.post(`${baseURL}/api/users/logout`);
+        const logout = await axios.post(`/api/users/logout`);
         console.log("Successfully logged out:", logout);
     } catch (error) {
         console.log("Error with logout request to API!", error);
@@ -33,7 +30,7 @@ export const postLogout = async () => {
 
 export const postNewPost = async formData => {
     try {
-        const newPost = await axios.post(`${baseURL}/api/posts`, formData);
+        const newPost = await axios.post(`/api/posts`, formData);
         console.log("Successfully POSTED:", newPost);
     } catch (error) {
         console.log("Error with POST request to API!", error);
@@ -42,7 +39,7 @@ export const postNewPost = async formData => {
 
 export const getPosts = async () => {
     try {
-        const posts = await axios.get(`${baseURL}/api/posts`);
+        const posts = await axios.get(`/api/posts`);
         return posts.data;
     } catch (error) {
         console.log("Error with GET request to API!", error);
@@ -51,7 +48,7 @@ export const getPosts = async () => {
 
 export const getSinglePost = async postId => {
     try {
-        const singlePost = await axios.get(`${baseURL}/api/posts/post/${postId}`);
+        const singlePost = await axios.get(`/api/posts/post/${postId}`);
         return singlePost.data;
     } catch (error) {
         console.log("Error with GET request to API!", error);
@@ -60,7 +57,7 @@ export const getSinglePost = async postId => {
 
 export const getUserPosts = async userId => {
     try {
-        const userPosts = await axios.get(`${baseURL}/api/posts/user/${userId}`);
+        const userPosts = await axios.get(`/api/posts/user/${userId}`);
         return userPosts.data;
     } catch (error) {
         console.log("Error with GET request to API!", error);
@@ -69,7 +66,7 @@ export const getUserPosts = async userId => {
 
 export const updatePost = async (postId, updatedData) => {
     try {
-        const updatedPost = await axios.put(`${baseURL}/api/posts/${postId}`, updatedData);
+        const updatedPost = await axios.put(`/api/posts/${postId}`, updatedData);
         return updatedPost.data;
     } catch (error) {
         console.log("Error with PUT request to API!", error);
@@ -79,7 +76,7 @@ export const updatePost = async (postId, updatedData) => {
 
 export const deletePost = async postId => {
     try {
-        const deletedPost = await axios.delete(`${baseURL}/api/posts/${postId}`);
+        const deletedPost = await axios.delete(`/api/posts/${postId}`);
         return deletedPost.data;
     } catch (error) {
         console.log("Error with DELETE request to API!", error);
@@ -89,7 +86,7 @@ export const deletePost = async postId => {
 
 export const putComment = async commentData => {
     try {
-        const newComment = await axios.put(`${baseURL}/api/comment/create`, commentData);
+        const newComment = await axios.put(`/api/comment/create`, commentData);
         return newComment.data;
     } catch (error) {
         console.log("Error with PUT request to API!", error);
@@ -98,7 +95,7 @@ export const putComment = async commentData => {
 
 export const deleteComment = async commentData => {
     try {
-        const deletedComment = await axios.put(`${baseURL}/api/comment/delete`, commentData);
+        const deletedComment = await axios.put(`/api/comment/delete`, commentData);
         return deletedComment.data;
     } catch (error) {
         console.log("Error with DELETE request to API!", error);
@@ -107,7 +104,7 @@ export const deleteComment = async commentData => {
 
 export const searchPosts = async (queryType, queryData) => {
     try {
-        const searchResults = await axios.get(`${baseURL}/api/search/${queryType}/${queryData}`);
+        const searchResults = await axios.get(`/api/search/${queryType}/${queryData}`);
         return searchResults.data;
     } catch (error) {
         console.log("Error with GET request to API!", error);   
