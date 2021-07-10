@@ -27,7 +27,7 @@ const Tools = () => {
     const generateTools = tools => tools.map(tool => <ToolCardContainer key={ tool.name } header={ tool.header } description={ tool.description } toggleFunc={ tool.toggleFunc } />);
 
     return (
-        <div className="Tools grid grid-flow-col">
+        <div className="Tools grid grid-flow-col gap-5 m-5">
             { toolStateOne
                 ? <BakersPercentageCalculator toggleFunc={ toggleBakersPercentage } /> 
                 : generateTools(toolInfo) }
