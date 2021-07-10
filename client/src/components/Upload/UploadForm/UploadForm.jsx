@@ -30,15 +30,15 @@ const UploadForm = () => {
     };
 
     return (
-        <form className="UploadForm grid grid-cols-2 bg-gray-100 rounded-md p-5 m-5" name="upload-form" encType="multipart/form-data" onSubmit={ handleSubmit }>
+        <form className="UploadForm grid grid-cols-1 lg:grid-cols-2 bg-gray-100 rounded-md lg:p-5 lg:m-5" name="upload-form" encType="multipart/form-data" onSubmit={ handleSubmit }>
             <FormTextarea labelName="Title:" htmlFor="title" rows={1} cols={30} />
             <FormTextarea labelName="Ingredients:" htmlFor="ingredients" placeholder="Separate ingredients with spaces..." rows={4} cols={30} />
             <FormTextarea labelName="Method:" htmlFor="method" rows={4} cols={30} />
             <FormTextarea labelName="Tags:" htmlFor="tags" placeholder="Separate tags with spaces..." rows={1} cols={30} />
-            <div className="col-span-2 p-2 m-2">
+            <div className="lg:col-span-2 p-2 m-2">
                 <FormInput labelName="Image:" htmlFor="image" placeholder="Image" inputType="file" />
             </div>
-            <div className="border-t-2 border-gray-300 col-span-2 pt-6 m-2">
+            <div className="lg:col-span-2 border-t-2 border-gray-300 pt-6 m-2">
                 <ButtonDark type="submit" text="Submit" />
             </div>
         </form>

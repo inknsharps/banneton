@@ -12,7 +12,7 @@ const Dashboard = () => {
                     <DashboardContainer />
                 </div>
             </div>
-            <div className="flex justify-center p-3 m-3">
+            <div className="grid grid-cols-1 p-3 m-3 lg:mx-52">
                 <UploadContainer />
             </div>
         </div>
