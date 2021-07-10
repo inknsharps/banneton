@@ -72,7 +72,7 @@ const SearchForm = () => {
                         ? null 
                         : <>
                             <h3 className="text-3xl border-b-2 border-gray-200 p-2 m-2">Results:</h3>
-                            <div className="grid gap-1 grid-cols-1 lg:grid-cols-4 grid-rows-4 max-w-7xl bg-gray-200 p-3 m-5">
+                            <div className="grid gap-1 grid-cols-1 lg:grid-cols-4 grid-rows-4 max-w-7xl bg-gray-200 lg:p-3 lg:m-5">
                                 { generateSearchResults(searchResults) }
                             </div>
                         </>

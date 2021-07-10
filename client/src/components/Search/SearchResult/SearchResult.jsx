@@ -20,7 +20,7 @@ export const SearchResultSmall = ({ image, _id, title }) => {
 
 export const SearchResultLarge = ({ image, _id, title }) => {
     return (
-        <a className="SearchResultLarge col-span-2 row-span-2 container" href={`#/${_id}`}>
+        <a className="SearchResultLarge lg:col-span-2 lg:row-span-2 container" href={`#/${_id}`}>
             <img className="container" src={ image } alt={ title }/>
         </a>
     )
