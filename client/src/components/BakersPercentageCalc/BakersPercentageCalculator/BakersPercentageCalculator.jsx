@@ -7,7 +7,7 @@ import ScaledIngredient from "../ScaledIngredient/ScaledIngredient";
 
 import BakersPercentageContext from "../../../contexts/BakersPercentageContext";
 
-const BakersPercentageCalculator = () => {
+const BakersPercentageCalculator = ({ toggleFunc }) => {
     const [ flourWeight, setFlourWeight ] = useState(100);
     const [ ingredients, setIngredients ] = useState([]);
     const [ scaledFlourWeight, setScaledFlourWeight ] = useState(1000);
@@ -81,6 +81,9 @@ const BakersPercentageCalculator = () => {
                     <input></input>
                     <button type="submit">Add Ingredient!</button>
                 </form>
+                <div className="col-span-2">
+                    <button onClick={ toggleFunc }>Return to Tools Menu.</button>
+                </div>
             </div>
         </BakersPercentageContext.Provider>
     )
