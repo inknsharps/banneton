@@ -6,7 +6,7 @@ const ScaledFlourInput = () => {
     const { scaledFlourWeight, setScaledFlourWeight } = useContext(BakersPercentageContext);
 
     return (
-        <div className="ScaledFlourInput grid grid-cols-2">
+        <div className="ScaledFlourInput grid grid-cols-2 text-sm lg:text-md">
             <label>Scaled Flour Weight:</label>
             <input className="border-2 border-gray-200 text-center" defaultValue={ scaledFlourWeight } onChange={ event => setScaledFlourWeight(event.target.value) }></input>
         </div>

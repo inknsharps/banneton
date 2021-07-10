@@ -47,7 +47,7 @@ const ImageContainer = ({ getRequest, _id, idType }) => {
     };
 
     return (
-        <div className="ImageContainer grid grid-cols-3 gap-12"> 
+        <div className="ImageContainer grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-12"> 
             { generatePosts(currentPosts) }
         </div>
     )

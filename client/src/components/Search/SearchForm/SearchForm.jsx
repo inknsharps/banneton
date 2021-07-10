@@ -57,12 +57,14 @@ const SearchForm = () => {
                     <label className="text-left text-xl border-b-2 border-gray-200 m-2 p-2" htmlFor="search">Search:</label>
                     <input className="text-center w-full m-2 p-2"></input>
                 </div>
-                <div className="flex justify-evenly">
+                <div className="flex flex-col md:flex-row justify-evenly items-center">
                     <FormRadio labelName="Title" formName="search" htmlFor="search" defaultValue="title" defaultChecked={ true }/>
                     <FormRadio labelName="Tag" formName="search" htmlFor="search" defaultValue="tag" defaultChecked={ false } />
                     <FormRadio labelName="Ingredient" formName="search" htmlFor="search" defaultValue="ingredient" defaultChecked={ false } />
                 </div>
-                <ButtonDark text="Search!" type="submit" />
+                <div className="m-2">
+                    <ButtonDark text="Search!" type="submit" />
+                </div>
             </form>
             <div className="flex flex-col justify-center">
                 {
