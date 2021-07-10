@@ -85,13 +85,13 @@ const BakersPercentageCalculator = ({toggleFunc}) => {
     href: "https://www.kingarthurbaking.com/pro/reference/bakers-percentage",
     target: "_blank"
   }, "this article"), " if you are not familiar with how these work. "), /* @__PURE__ */ React.createElement("br", null), /* @__PURE__ */ React.createElement("p", null, "To scale up the recipe, change the flour weight in the scaled measurements form, and it will automatically calculate the amounts based on the recipe you entered.")), /* @__PURE__ */ React.createElement(React.Fragment, null)), /* @__PURE__ */ React.createElement("div", {
-    className: "col-span-2 grid grid-cols-1 gap-2 bg-white border border-gray-300 p-5 rounded-md shadow-lg"
+    className: "col-span-2 lg:col-span-1 grid grid-cols-1 gap-2 bg-white border border-gray-300 p-5 rounded-md shadow-lg"
   }, /* @__PURE__ */ React.createElement("h3", {
     className: "bg-indigo-400 text-white text-2xl ring-2 ring-offset-4 ring-gray-200 rounded shadow-lg m-5 p-5"
   }, "Baker's Percentages"), /* @__PURE__ */ React.createElement("div", {
     className: "grid grid-cols-4 border-b-2 border-gray-200 font-bold text-sm lg:text-md"
   }, /* @__PURE__ */ React.createElement("h3", null, "Ingredient"), /* @__PURE__ */ React.createElement("h3", null, "Weight (g)"), /* @__PURE__ */ React.createElement("h3", null, "Baker's Percentage"), /* @__PURE__ */ React.createElement(React.Fragment, null)), /* @__PURE__ */ React.createElement(FlourInput, null), generateIngredientInputs(ingredients)), /* @__PURE__ */ React.createElement("div", {
-    className: "col-span-2 grid grid-cols-1 gap-2 bg-white border border-indigo-300 p-5 rounded-md shadow-lg"
+    className: "col-span-2 lg:col-span-1 grid grid-cols-1 gap-2 bg-white border border-indigo-300 p-5 rounded-md shadow-lg"
   }, /* @__PURE__ */ React.createElement("h3", {
     className: "bg-indigo-400 text-white text-2xl ring-2 ring-offset-4 ring-gray-200 rounded shadow-lg m-5 p-5"
   }, "Scaled Measurements"), /* @__PURE__ */ React.createElement("div", {
