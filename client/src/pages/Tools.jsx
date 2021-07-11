@@ -1,12 +1,18 @@
 import React, { useState } from "react";
 import ToolCardContainer from "../components/ToolCard/ToolCardContainer/ToolCardContainer";
 import BakersPercentageCalculator from "../components/BakersPercentageCalc/BakersPercentageCalculator/BakersPercentageCalculator";
+import SourdoughCalculator from "../components/SourdoughCalculator/SourdoughCalculator/SourdoughCalculator";
 
 const Tools = () => {
     const [ toolStateOne, setToolStateOne ] = useState(false);
+    const [ toolStateTwo, setToolStateTwo ] = useState(false);
     
     const toggleBakersPercentage = () => {
         setToolStateOne(prev => !prev)
+    };
+
+    const toggleSourdoughCalculator = () => {
+        setToolStateTwo(prev => !prev)
     };
 
     const toolInfo = [
@@ -20,7 +26,7 @@ const Tools = () => {
             name: "sourdoughCalculator",
             header: "Sourdough Calculator",
             description: "A tool to calculate sourdough starter feed ratios, and recipe scaler.",
-            toggleFunc: () => alert("Not yet implemented!")
+            toggleFunc: toggleSourdoughCalculator
         }
     ];
 
@@ -28,9 +34,9 @@ const Tools = () => {
 
     return (
         <div className="Tools grid grid-cols-1 lg:grid-flow-col gap-5 m-5">
-            { toolStateOne
-                ? <BakersPercentageCalculator toggleFunc={ toggleBakersPercentage } /> 
-                : generateTools(toolInfo) }
+            { !toolStateOne && !toolStateTwo ? generateTools(toolInfo) : null }
+            { toolStateOne ? <BakersPercentageCalculator toggleFunc={ toggleBakersPercentage } /> : null }
+            { toolStateTwo ? <SourdoughCalculator toggleFunc={ toggleSourdoughCalculator } /> : null }
         </div>
     )
 };
