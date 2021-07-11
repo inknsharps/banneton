@@ -1,5 +1,8 @@
 import React from "react";
 import DoughWeightInput from "../SourdoughCalculatorInputs/DoughWeightInput/DoughWeightInput";
+import WaterInput from "../SourdoughCalculatorInputs/WaterInput/WaterInput";
+import SaltInput from "../SourdoughCalculatorInputs/SaltInput/SaltInput";
+import StarterInput from "../SourdoughCalculatorInputs/StarterInput/Starterinput";
 import ButtonDark from "../../Button/ButtonDark/ButtonDark";
 
 import useSourdoughReducer from "../../../reducers/SourdoughCalculatorReducer";
@@ -12,6 +15,9 @@ const SourdoughCalculator = ({ toggleFunc }) => {
         <SourdoughContext.Provider value={ { sourdoughState, sourdoughDispatch } }>
             <div className="SourdoughCalculator grid grid-cols-1 lg:grid-cols-2 gap-5">
                 <DoughWeightInput />
+                <WaterInput />
+                <SaltInput />
+                <StarterInput />
                 <div className="col-span-2">
                     <ButtonDark text="Return to Tools Menu" type="button" callback={ toggleFunc } />
                 </div>
