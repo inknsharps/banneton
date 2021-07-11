@@ -1299,6 +1299,10 @@ video {
     margin: 1.25rem;
   }
 
+  .lg\:m-10 {
+    margin: 2.5rem;
+  }
+
   .lg\:mx-36 {
     margin-left: 9rem;
     margin-right: 9rem;
@@ -1329,6 +1333,10 @@ video {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
+  .lg\:flex-row {
+    flex-direction: row;
+  }
+
   .lg\:p-2 {
     padding: 0.5rem;
   }
@@ -1341,9 +1349,18 @@ video {
     padding: 1.25rem;
   }
 
+  .lg\:p-10 {
+    padding: 2.5rem;
+  }
+
   .lg\:py-44 {
     padding-top: 11rem;
     padding-bottom: 11rem;
+  }
+
+  .lg\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
   }
 
   .lg\:text-7xl {

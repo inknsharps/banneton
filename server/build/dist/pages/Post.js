@@ -43,7 +43,7 @@ const Post = (props) => {
     tags,
     title: post.title
   }), /* @__PURE__ */ React.createElement("h2", {
-    className: "text-left text-3xl italic border-b-2 border-gray-200 pb-2 m-10"
+    className: "text-left text-xl lg:text-3xl italic border-b-2 border-gray-200 pb-2 m-10"
   }, "Comments on ", post.title), /* @__PURE__ */ React.createElement("div", {
     className: "grid grid-col-1 justify-center"
   }, generateComments(comments)), /* @__PURE__ */ React.createElement("div", {
