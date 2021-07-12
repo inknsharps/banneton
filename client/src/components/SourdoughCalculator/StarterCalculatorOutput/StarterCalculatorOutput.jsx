@@ -13,7 +13,7 @@ const StarterCalculatorOutput = () => {
     };
 
     return (
-        <div className="StarterCalculatorOutput">
+        <div className="StarterCalculatorOutput col-span-2 lg:col-span-1">
             <h3 className="bg-indigo-400 text-white text-xl ring ring-offset-2 ring-gray-200 rounded shadow-md p-2 m-5">Ingredient Weights</h3>
             <h3>Seed Starter: { calculateIngredientWeight(1, targetStarterWeight, totalRatio) } g</h3>
             <h3>Water Weight: { calculateIngredientWeight(waterRatio, targetStarterWeight, totalRatio) } g</h3>
