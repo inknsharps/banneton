@@ -4,6 +4,7 @@ import WaterInput from "../SourdoughCalculatorInputs/WaterInput/WaterInput";
 import SaltInput from "../SourdoughCalculatorInputs/SaltInput/SaltInput";
 import StarterInput from "../SourdoughCalculatorInputs/StarterInput/Starterinput";
 import SourdoughCalculatorOutputs from "../SourdoughCalculatorOutputs/SourdoughCalculatorOutputs";
+import StarterCalculator from "../StarterCalculator/StarterCalculator";
 import ButtonDark from "../../Button/ButtonDark/ButtonDark";
 
 import useSourdoughReducer from "../../../reducers/SourdoughCalculatorReducer";
@@ -20,6 +21,7 @@ const SourdoughCalculator = ({ toggleFunc }) => {
                 <SaltInput />
                 <StarterInput />
                 <SourdoughCalculatorOutputs />
+                <StarterCalculator />
                 <div className="col-span-2">
                     <ButtonDark text="Return to Tools Menu" type="button" callback={ toggleFunc } />
                 </div>
