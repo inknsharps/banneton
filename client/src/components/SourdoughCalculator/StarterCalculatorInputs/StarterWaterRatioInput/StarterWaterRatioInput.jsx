@@ -6,7 +6,7 @@ const StarterWaterRatioInput = () => {
     const { sourdoughState, sourdoughDispatch } = useContext(SourdoughContext);
 
     return (
-        <div className="StarterWaterRatioInput grid grid-cols-2 text-sm lg:text-md">
+        <div className="StarterWaterRatioInput grid grid-cols-2 text-sm lg:text-base">
             <label>Water Ratio:</label>
             <input 
                 className="border-2 border-gray-200 text-center" 

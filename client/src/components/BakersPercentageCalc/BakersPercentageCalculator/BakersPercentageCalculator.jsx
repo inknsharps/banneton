@@ -88,7 +88,7 @@ const BakersPercentageCalculator = ({ toggleFunc }) => {
                 </div>
                 <div className="col-span-2 lg:col-span-1 grid grid-cols-1 gap-2 bg-white border border-gray-300 p-5 rounded-md shadow-lg">
                     <h3 className="bg-indigo-400 text-white text-2xl ring-2 ring-offset-4 ring-gray-200 rounded shadow-lg m-5 p-5">Baker's Percentages</h3>
-                    <div className="grid grid-cols-4 border-b-2 border-gray-200 font-bold text-sm lg:text-md">
+                    <div className="grid grid-cols-4 border-b-2 border-gray-200 font-bold text-sm lg:text-base">
                         <h3>Ingredient</h3>
                         <h3>Weight (g)</h3>
                         <h3>Baker's Percentage</h3>
@@ -99,14 +99,14 @@ const BakersPercentageCalculator = ({ toggleFunc }) => {
                 </div>
                 <div className="col-span-2 lg:col-span-1 grid grid-cols-1 gap-2 bg-white border border-indigo-300 p-5 rounded-md shadow-lg">
                     <h3 className="bg-indigo-400 text-white text-2xl ring-2 ring-offset-4 ring-gray-200 rounded shadow-lg m-5 p-5">Scaled Measurements</h3>
-                    <div className="grid grid-cols-2 border-b-2 border-gray-200 font-bold text-sm lg:text-md">
+                    <div className="grid grid-cols-2 border-b-2 border-gray-200 font-bold text-sm lg:text-base">
                         <h3>Ingredient</h3>
                         <h3>Scaled Weight (g)</h3>
                     </div>
                     <ScaledFlourInput />
                     { generateScaledIngredients(scaledIngredients) }
                 </div>
-                <form className="col-span-2 grid grid-cols-3 gap-5 bg-white border border-indigo-300 p-5 rounded-md shadow-lg my-5 xl:mx-96 text-sm lg:text-md" onSubmit={ handleSubmit }>
+                <form className="col-span-2 grid grid-cols-3 gap-5 bg-white border border-indigo-300 p-5 rounded-md shadow-lg my-5 xl:mx-96 text-sm lg:text-base" onSubmit={ handleSubmit }>
                     <div className="flex flex-col">
                         <label className="text-center">Ingredient Name</label>
                         <input className="border-2 border-gray-200 text-center"></input>
