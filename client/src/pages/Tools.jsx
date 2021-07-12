@@ -24,8 +24,8 @@ const Tools = () => {
         },
         {
             name: "sourdoughCalculator",
-            header: "Sourdough Calculator",
-            description: "A tool to calculate sourdough starter feed ratios, and recipe scaler.",
+            header: "Sourdough Starter and Dough Calculator",
+            description: "A tool to calculate sourdough starter feed ratios, and dough ingredient weights.",
             toggleFunc: toggleSourdoughCalculator
         }
     ];

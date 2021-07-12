@@ -1,7 +1,7 @@
 import { useReducer } from "react";
 
 const initialState = {
-    doughWeight: 100,
+    doughWeight: 1000,
     waterPercentage: 0.75,
     saltPercentage: 0.02,
     starterPercentage: 0.2,
