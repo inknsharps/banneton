@@ -6,7 +6,7 @@ const DoughWeightInput = () => {
     const { sourdoughState, sourdoughDispatch } = useContext(SourdoughContext);
 
     return (
-        <div className="DoughWeightInput grid grid-cols-4 text-sm lg:text-md">
+        <div className="DoughWeightInput grid grid-cols-2 text-sm lg:text-md">
             <label>Dough Weight:</label>
             <input 
                 className="border-2 border-gray-200 text-center" 
