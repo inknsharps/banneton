@@ -5,6 +5,7 @@ import SaltInput from "../SourdoughCalculatorInputs/SaltInput/SaltInput";
 import StarterInput from "../SourdoughCalculatorInputs/StarterInput/Starterinput";
 import SourdoughCalculatorOutputs from "../SourdoughCalculatorOutputs/SourdoughCalculatorOutputs";
 import StarterCalculator from "../StarterCalculator/StarterCalculator";
+import StarterCalculatorOutput from "../StarterCalculatorOutput/StarterCalculatorOutput";
 import ButtonDark from "../../Button/ButtonDark/ButtonDark";
 
 import useSourdoughReducer from "../../../reducers/SourdoughCalculatorReducer";
@@ -33,16 +34,20 @@ const SourdoughCalculator = ({ toggleFunc }) => {
                     <></>
                     <div className="col-span-1 grid grid-cols-2 gap-2 bg-white border border-gray-300 p-5 rounded-md shadow-lg">
                         <h3 className="col-span-2 bg-indigo-400 text-white text-2xl ring-2 ring-offset-4 ring-gray-200 rounded shadow-lg m-5 p-5">Dough Calculator</h3>
-                        <DoughWeightInput />
-                        <WaterInput />
-                        <SaltInput />
-                        <StarterInput />
+                        <div className="grid grid-cols-1">
+                            <h3 className="bg-indigo-400 text-white text-xl ring ring-offset-2 ring-gray-200 rounded shadow-md p-2 m-5">Input</h3>
+                            <DoughWeightInput />
+                            <WaterInput />
+                            <SaltInput />
+                            <StarterInput />
+                        </div>
                         <SourdoughCalculatorOutputs />
                     </div>
 
                     <div className="col-span-1 grid grid-cols-2 gap-2 bg-white border border-gray-300 p-5 rounded-md shadow-lg">
                         <h3 className="col-span-2 bg-indigo-400 text-white text-2xl ring-2 ring-offset-4 ring-gray-200 rounded shadow-lg m-5 p-5">Starter Calculator</h3>
                         <StarterCalculator />
+                        <StarterCalculatorOutput />
                     </div>
                 </div>
 

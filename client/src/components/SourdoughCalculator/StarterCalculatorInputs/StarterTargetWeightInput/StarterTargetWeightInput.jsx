@@ -7,7 +7,7 @@ const StarterTargetWeightInput = () => {
 
     return (
         <div className="StarterTargetWeightInput grid grid-cols-2 text-sm lg:text-md">
-            <label>Target Starter Weight:</label>
+            <label>Target Starter Weight (g):</label>
             <input 
                 className="border-2 border-gray-200 text-center" 
                 defaultValue={ sourdoughState.targetStarterWeight } 

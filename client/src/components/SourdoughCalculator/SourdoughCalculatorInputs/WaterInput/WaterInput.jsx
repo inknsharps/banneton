@@ -6,8 +6,8 @@ const WaterInput = () => {
     const { sourdoughState, sourdoughDispatch } = useContext(SourdoughContext);
 
     return (
-        <div className="WaterInput grid grid-cols-2 text-sm lg:text-md">
-            <label>Water Percentage:</label>
+        <div className="WaterInput grid grid-cols-2 text-sm lg:text-md lg:mr-10">
+            <label>Water (%):</label>
             <input 
                 className="border-2 border-gray-200 text-center" 
                 defaultValue={ sourdoughState.waterPercentage * 100 } 

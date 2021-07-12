@@ -17,11 +17,12 @@ const SourdoughCalculatorOutputs = () => {
     };
 
     return (
-        <div className="SourdoughCalculatorOutputs col-span-2">
-            <h1>Flour: { calculateFlourWeight(doughWeight, totalPercentages) }g</h1>
-            <h1>Water: { calculateIngredientWeight(waterPercentage, calculateFlourWeight(doughWeight, totalPercentages)) }g</h1>
-            <h1>Salt: { calculateIngredientWeight(saltPercentage, calculateFlourWeight(doughWeight, totalPercentages)) }g</h1>
-            <h1>Starter: { calculateIngredientWeight(starterPercentage, calculateFlourWeight(doughWeight, totalPercentages)) }g</h1>
+        <div className="SourdoughCalculatorOutputs">
+            <h3 className="bg-indigo-400 text-white text-xl ring ring-offset-2 ring-gray-200 rounded shadow-md p-2 m-5">Ingredient Weights</h3>
+            <h3>Flour: { calculateFlourWeight(doughWeight, totalPercentages) }g</h3>
+            <h3>Water: { calculateIngredientWeight(waterPercentage, calculateFlourWeight(doughWeight, totalPercentages)) } g</h3>
+            <h3>Salt: { calculateIngredientWeight(saltPercentage, calculateFlourWeight(doughWeight, totalPercentages)) } g</h3>
+            <h3>Starter: { calculateIngredientWeight(starterPercentage, calculateFlourWeight(doughWeight, totalPercentages)) } g</h3>
         </div>
     )
 };

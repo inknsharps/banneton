@@ -6,8 +6,8 @@ const SaltInput = () => {
     const { sourdoughState, sourdoughDispatch } = useContext(SourdoughContext);
 
     return (
-        <div className="SaltInput grid grid-cols-2 text-sm lg:text-md">
-            <label>Salt Percentage:</label>
+        <div className="SaltInput grid grid-cols-2 text-sm lg:text-md lg:mr-10">
+            <label>Salt (%):</label>
             <input 
                 className="border-2 border-gray-200 text-center" 
                 defaultValue={ sourdoughState.saltPercentage * 100 } 
