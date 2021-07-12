@@ -13,11 +13,7 @@ export default {
         /* Example: Bundle your final build: */
         bundle: true,
         minify: true,
-<<<<<<< HEAD
         target: "es2018"
-=======
-        target: "es2018",
->>>>>>> main
     },
     packageOptions: {
         /* ... */
