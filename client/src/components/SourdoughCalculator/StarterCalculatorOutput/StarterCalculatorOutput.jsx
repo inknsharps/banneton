@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 
+import { toDecimal } from "../../../utils/toDecimal";
 import SourdoughContext from "../../../contexts/SourdoughContext";
 
 const StarterCalculatorOutput = () => {
@@ -9,7 +10,7 @@ const StarterCalculatorOutput = () => {
     const totalRatio = 1 + waterRatio + flourRatio;
 
     const calculateIngredientWeight = (ingredientRatio, starterWeight, totalRatio) => {
-        return Math.ceil((ingredientRatio * (starterWeight / totalRatio)) * 10) / 10;
+        return toDecimal(ingredientRatio * (starterWeight / totalRatio));
     };
 
     return (

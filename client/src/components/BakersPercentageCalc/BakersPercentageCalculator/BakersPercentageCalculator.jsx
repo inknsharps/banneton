@@ -7,6 +7,7 @@ import ScaledIngredient from "../ScaledIngredient/ScaledIngredient";
 import ButtonDark from "../../Button/ButtonDark/ButtonDark";
 import ButtonLight from "../../Button/ButtonLight/ButtonLight";
 
+import { toDecimal } from "../../../utils/toDecimal";
 import useBakersPercentageReducer from "../../../reducers/BakersPercentageReducer";
 import BakersPercentageContext from "../../../contexts/BakersPercentageContext";
 
@@ -52,7 +53,7 @@ const BakersPercentageCalculator = ({ toggleFunc }) => {
     };
 
     const generateScaledDough = (flourWeight, ingredients) => {
-        const weights = ingredients.map(ingredient => ingredient.percentage * flourWeight);
+        const weights = ingredients.map(ingredient => toDecimal(ingredient.percentage * flourWeight));
         const totalWeight = weights.reduce((a, b) => a + b, 0) + flourWeight;
         return (
             <div className="col-span-2 grid grid-cols-2 gap-5 bg-white border border-indigo-300 p-5 rounded-md shadow-lg my-5 text-sm lg:text-base">
