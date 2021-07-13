@@ -25,7 +25,7 @@ const CommentForm = ({ postId, author, authorId }) => {
     };
 
     return (
-        <div className="CommentForm bg-gray-200 bg-opacity-50 rounded-xl ring-1 ring-gray-200 ring-offset-4 rounded-md shadow-lg m-5 p-5 w-5/12">
+        <div className="CommentForm w-full lg:w-1/2 bg-gray-200 bg-opacity-50 rounded-xl ring-1 ring-gray-200 ring-offset-4 rounded-md shadow-lg m-5 p-5 w-5/12">
             <form className="grid grid-col-1" onSubmit={ handleSubmit }>
                 <label className="text-left text-lg font-thin pb-2">New Comment:</label>
                 <textarea className="border-2 border-gray-200 m-2" rows="4" cols="50"></textarea>
