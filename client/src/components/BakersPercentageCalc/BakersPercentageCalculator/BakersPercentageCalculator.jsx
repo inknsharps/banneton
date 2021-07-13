@@ -21,20 +21,6 @@ const BakersPercentageCalculator = ({ toggleFunc }) => {
     const [ scaledFlourWeight, setScaledFlourWeight ] = useState(1000);
     const [ scaledIngredients, setScaledIngredients ] = useState([]);
 
-    // Whenever a new ingredient is added to the calculator, add onto the state for the ingredients and scaled ingredients for use in other components
-    const addIngredient = (flourWeight, name, value) => {
-        const newValue = {
-            name: name,
-            value: value
-        };
-        setIngredients(prev => [...prev, newValue]);
-        const scaledValue = {
-            name: name,
-            percentage: value / flourWeight
-        };
-        setScaledIngredients(prev => [...prev, scaledValue]);
-    };
-
     const removeIngredient = name => {
         setIngredients(prev => prev.filter(ingredient => ingredient.name !== name));
         setScaledIngredients(prev => prev.filter(ingredient => ingredient.name !== name));
@@ -43,9 +29,9 @@ const BakersPercentageCalculator = ({ toggleFunc }) => {
     const handleSubmit = event => {
         event.preventDefault();
         const ingredientName = event.target[0].value;
-        const ingredientValue = event.target[1].value;
-        if (ingredientName && ingredientValue) {
-            addIngredient(flourWeight, ingredientName, ingredientValue);
+        const ingredientWeight = parseFloat(event.target[1].value);
+        if (ingredientName && ingredientWeight) {
+            dispatchBakersPercentage({ type: "ADD_INGREDIENT", payload: { name: ingredientName, weight: ingredientWeight } });
             event.target[0].value = "";
             event.target[1].value = "";
         };
@@ -55,8 +41,8 @@ const BakersPercentageCalculator = ({ toggleFunc }) => {
         return ingredients.map(ingredient => {
             return ( 
                 <div className="grid grid-cols-4" key={ ingredient.name }>
-                    <IngredientInput labelName={ ingredient.name } defaultValue={ ingredient.value } />
-                    <PercentageDisplay labelName={ ingredient.name } value={ ingredient.value } />
+                    <IngredientInput labelName={ ingredient.name } defaultValue={ ingredient.weight } />
+                    <PercentageDisplay labelName={ ingredient.name } value={ ingredient.weight } />
                     <button onClick={ () => removeIngredient(ingredient.name) }>
                         <i className="far fa-times-circle text-indigo-500" />
                     </button>
@@ -98,7 +84,7 @@ const BakersPercentageCalculator = ({ toggleFunc }) => {
                         <></>
                     </div>
                     <FlourInput />
-                    { generateIngredientInputs(ingredients) }
+                    { generateIngredientInputs(bakersPercentageState.ingredients) }
                 </div>
                 <div className="col-span-2 lg:col-span-1 grid grid-cols-1 gap-2 bg-white border border-indigo-300 p-5 rounded-md shadow-lg">
                     <h3 className="bg-indigo-400 text-white text-2xl ring-2 ring-offset-4 ring-gray-200 rounded shadow-lg m-5 p-5">Scaled Measurements</h3>
@@ -107,7 +93,7 @@ const BakersPercentageCalculator = ({ toggleFunc }) => {
                         <h3>Scaled Weight (g)</h3>
                     </div>
                     <ScaledFlourInput />
-                    { generateScaledIngredients(scaledIngredients) }
+                    { generateScaledIngredients(bakersPercentageState.ingredients) }
                 </div>
                 <form className="col-span-2 grid grid-cols-3 gap-5 bg-white border border-indigo-300 p-5 rounded-md shadow-lg my-5 xl:mx-96 text-sm lg:text-base" onSubmit={ handleSubmit }>
                     <div className="flex flex-col">

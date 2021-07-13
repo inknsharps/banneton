@@ -10,11 +10,14 @@ const bakersPercentageReducer = (state, action) => {
     switch (action.type) {
         case "CHANGE_FLOUR_WEIGHT":
             // Recalculate the new percentages for each ingredient as the flourWeight changed
-            const updatedIngredients = state.ingredients.map(ingredient => ingredient.percentage = ingredient.weight / parseFloat(action.payload));
-            return { ...state, ingredients: updatedIngredients, flourWeight: parseFloat(action.payload) };
+            const updatedIngredients = state.ingredients.map(ingredient => {
+                ingredient.percentage = ingredient.weight / action.payload;
+                return { ...ingredient };
+            });
+            return { ...state, ingredients: updatedIngredients, flourWeight: action.payload };
 
         case "CHANGE_SCALED_FLOUR_WEIGHT":
-            return { ...state, scaledFlourWeight: parseFloat(action.payload) };
+            return { ...state, scaledFlourWeight: action.payload };
 
         case "ADD_INGREDIENT":
             // We should have an object for the payload for this case, since we need to calculate the percentage
@@ -31,7 +34,7 @@ const bakersPercentageReducer = (state, action) => {
             const [ updatedIngredient ] = state.ingredients.filter(ingredient => ingredient.name === action.payload.name);
             const otherIngredients = state.ingredients.filter(ingredient => ingredient.name !== action.payload.name);
             updatedIngredient.weight = action.payload.weight;
-            updatedIngredient.percentage = state.flourWeight / action.payload.weight;
+            updatedIngredient.percentage = action.payload.weight / state.flourWeight;
 
             return { ...state, ingredients: [...otherIngredients, updatedIngredient] };
 
