@@ -7,7 +7,7 @@ const PostHeader = ({ title, author, date }) => {
                 <div className="p-5">
                     <h2 className="text-5xl lg:text-7xl">{ title }</h2>
                 </div>
-                <h3 className="italic text-sm lg:text-md self-end justify-self-end">Posted by: { author } on { date }</h3>
+                <h3 className="italic text-sm lg:text-base self-end justify-self-end">Posted by: { author } on { date }</h3>
             </div>
         </div>
     )

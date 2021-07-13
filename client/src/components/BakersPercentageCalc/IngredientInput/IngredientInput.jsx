@@ -3,25 +3,16 @@ import React, { useContext } from "react";
 import BakersPercentageContext from "../../../contexts/BakersPercentageContext";
 
 const IngredientInput = ({ labelName, defaultValue }) => {
-    const { flourWeight, ingredients, setIngredients, scaledIngredients, setScaledIngredients } = useContext(BakersPercentageContext);
-
-    const updateIngredientValue = (ingredients, scaledIngredients, name, value) => {
-        // Filter out and get the singular ingredient by the ingredient name, and the other ingredients array
-        const [ updatedIngredient ] = ingredients.filter(ingredient => ingredient.name === name);
-        const otherIngredients = ingredients.filter(ingredient => ingredient.name !== name);
-        updatedIngredient.value = value;
-        setIngredients([...otherIngredients, updatedIngredient]);
-
-        const [ updatedScaledIngredient ] = scaledIngredients.filter(ingredient => ingredient.name === name);
-        const otherScaledIngredients = scaledIngredients.filter(ingredient => ingredient.name !== name);
-        updatedScaledIngredient.percentage = value / flourWeight;
-        setScaledIngredients([...otherScaledIngredients, updatedScaledIngredient]);
-    };
+    const { dispatchBakersPercentage } = useContext(BakersPercentageContext);
 
     return (
         <>
-            <label>{ labelName }</label>
-            <input className="border-2 border-gray-200 text-center" value={ defaultValue } onChange={ event => updateIngredientValue(ingredients, scaledIngredients, labelName, event.target.value) }></input>
+            <label className="text-sm lg:text-base">{ labelName }</label>
+            <input 
+                className="border-2 border-gray-200 text-center text-sm lg:text-base" 
+                value={ defaultValue || "" } 
+                onChange={ event => dispatchBakersPercentage({ type: "UPDATE_INGREDIENT", payload: { name: labelName, weight: parseFloat(event.target.value) }}) }>
+            </input>
         </>
     )
 };
