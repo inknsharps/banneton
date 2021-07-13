@@ -10,8 +10,8 @@ const FlourInput = () => {
             <label>Flour Weight:</label>
             <input 
                 className="border-2 border-gray-200 text-center" 
-                defaultValue={ bakersPercentageState.flourWeight } 
-                onChange={ event => dispatchBakersPercentage({ type: "CHANGE_FLOUR_WEIGHT", payload: event.target.value }) }>
+                value={ bakersPercentageState.flourWeight || "" } 
+                onChange={ event => dispatchBakersPercentage({ type: "CHANGE_FLOUR_WEIGHT", payload: parseFloat(event.target.value) }) }>
             </input>
         </div>
     )
