@@ -52,7 +52,7 @@ const BakersPercentageCalculator = ({ toggleFunc }) => {
     };
 
     const generateScaledDough = (flourWeight, ingredients) => {
-        const weights = ingredients.map(ingredient => ingredient.weight);
+        const weights = ingredients.map(ingredient => ingredient.percentage * flourWeight);
         const totalWeight = weights.reduce((a, b) => a + b, 0) + flourWeight;
         return (
             <div className="col-span-2 grid grid-cols-2 gap-5 bg-white border border-indigo-300 p-5 rounded-md shadow-lg my-5 text-sm lg:text-base">
