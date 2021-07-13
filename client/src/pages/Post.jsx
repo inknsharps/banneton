@@ -8,6 +8,7 @@ import CommentForm from "../components/Comment/CommentForm/CommentForm";
 import UserPostContext from "../contexts/UserPostContext";
 import { getSinglePost } from "../utils/API";
 import UserContext from "../contexts/UserContext";
+import { toLocaleDate } from "../utils/toLocaleDate";
 
 const Post = props => {
     const { userState } = useContext(UserContext);
@@ -36,7 +37,7 @@ const Post = props => {
 
     return (
         <div className="Post">
-            <PostContainer author={ post.author } date={ post.date } image={ post.image } ingredients={ ingredients } method={ post.method } tags={ tags } title={ post.title } />
+            <PostContainer author={ post.author } date={ toLocaleDate(post.date) } image={ post.image } ingredients={ ingredients } method={ post.method } tags={ tags } title={ post.title } />
             <h2 className="text-left text-xl lg:text-3xl italic border-b-2 border-gray-200 pb-2 m-10">Comments on { post.title }</h2>
             <div className="grid grid-col-1 justify-center">
                 { generateComments(comments) }
