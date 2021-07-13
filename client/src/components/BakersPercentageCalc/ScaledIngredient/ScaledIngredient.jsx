@@ -9,8 +9,8 @@ const ScaledIngredient = ({ labelName, percentage }) => {
 
     return (
         <>
-            <h3>{ labelName }</h3>
-            <h3>{ scaledWeight }</h3>
+            <h3 className="text-sm lg:text-base">{ labelName }</h3>
+            <h3 className="text-sm lg:text-base">{ scaledWeight || "" }</h3>
         </>
     )
 };

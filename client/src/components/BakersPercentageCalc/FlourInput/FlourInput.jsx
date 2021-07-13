@@ -6,7 +6,7 @@ const FlourInput = () => {
     const { bakersPercentageState, dispatchBakersPercentage } = useContext(BakersPercentageContext);
 
     return (
-        <div className="FlourInput grid grid-cols-4 text-sm lg:text-base">
+        <div className="FlourInput col-span-2 grid grid-cols-4 text-sm lg:text-base">
             <label>Flour Weight:</label>
             <input 
                 className="border-2 border-gray-200 text-center" 

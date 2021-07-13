@@ -7,9 +7,9 @@ const IngredientInput = ({ labelName, defaultValue }) => {
 
     return (
         <>
-            <label>{ labelName }</label>
+            <label className="text-sm lg:text-base">{ labelName }</label>
             <input 
-                className="border-2 border-gray-200 text-center" 
+                className="border-2 border-gray-200 text-center text-sm lg:text-base" 
                 value={ defaultValue || "" } 
                 onChange={ event => dispatchBakersPercentage({ type: "UPDATE_INGREDIENT", payload: { name: labelName, weight: parseFloat(event.target.value) }}) }>
             </input>

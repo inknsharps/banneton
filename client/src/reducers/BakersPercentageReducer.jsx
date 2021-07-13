@@ -31,12 +31,17 @@ const bakersPercentageReducer = (state, action) => {
         case "UPDATE_INGREDIENT":
             // We should have an object for the payload for this case
             // Also, we update the percentage property again
-            const [ updatedIngredient ] = state.ingredients.filter(ingredient => ingredient.name === action.payload.name);
-            const otherIngredients = state.ingredients.filter(ingredient => ingredient.name !== action.payload.name);
-            updatedIngredient.weight = action.payload.weight;
-            updatedIngredient.percentage = action.payload.weight / state.flourWeight;
+            const { ingredients } = state;
+            
+            ingredients.forEach(ingredient => {
+                if (ingredient.name === action.payload.name) {
+                    ingredient.weight = action.payload.weight;
+                    ingredient.percentage = action.payload.weight / state.flourWeight;
+                };
+                return ingredient;
+            });
 
-            return { ...state, ingredients: [...otherIngredients, updatedIngredient] };
+            return { ...state, ingredients };
 
         case "REMOVE_INGREDIENT":
             const removedIngredients = state.ingredients.filter(ingredient => ingredient.name !== action.payload.name);
