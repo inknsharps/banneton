@@ -1,11 +1,12 @@
 import React, { useContext } from "react";
 
+import { toDecimal } from "../../../utils/toDecimal";
 import BakersPercentageContext from "../../../contexts/BakersPercentageContext";
 
 const ScaledIngredient = ({ labelName, percentage }) => {
     const { bakersPercentageState } = useContext(BakersPercentageContext);
 
-    const scaledWeight = bakersPercentageState.scaledFlourWeight * percentage;
+    const scaledWeight = toDecimal(bakersPercentageState.scaledFlourWeight * percentage);
 
     return (
         <>
