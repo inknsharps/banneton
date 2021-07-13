@@ -7,12 +7,15 @@ import ScaledIngredient from "../ScaledIngredient/ScaledIngredient";
 import ButtonDark from "../../Button/ButtonDark/ButtonDark";
 import ButtonLight from "../../Button/ButtonLight/ButtonLight";
 
+import useBakersPercentageReducer from "../../../reducers/BakersPercentageReducer";
 import BakersPercentageContext from "../../../contexts/BakersPercentageContext";
 
 import "@fortawesome/fontawesome-free/js/all";
 import "@fortawesome/fontawesome-free/js/fontawesome";
 
 const BakersPercentageCalculator = ({ toggleFunc }) => {
+    const [ bakersPercentageState, dispatchBakersPercentage ] = useBakersPercentageReducer();
+
     const [ flourWeight, setFlourWeight ] = useState(100);
     const [ ingredients, setIngredients ] = useState([]);
     const [ scaledFlourWeight, setScaledFlourWeight ] = useState(1000);
@@ -73,7 +76,7 @@ const BakersPercentageCalculator = ({ toggleFunc }) => {
     }
 
     return (
-        <BakersPercentageContext.Provider value={ { flourWeight, setFlourWeight, ingredients, setIngredients, scaledFlourWeight, setScaledFlourWeight, scaledIngredients, setScaledIngredients } }>
+        <BakersPercentageContext.Provider value={ { bakersPercentageState, dispatchBakersPercentage, flourWeight, setFlourWeight, ingredients, setIngredients, scaledFlourWeight, setScaledFlourWeight, scaledIngredients, setScaledIngredients } }>
             <div className="BakersPercentageCalcContainer grid grid-cols-1 lg:grid-cols-2 gap-5">
                 <div className="col-span-2">
                     <h2 className="text-3xl lg:text-7xl p-5">Baker's Percentage Calculator and Scaler</h2>
