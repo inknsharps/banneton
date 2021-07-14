@@ -14,6 +14,7 @@ import Tools from "./pages/Tools";
 import UserContext from "./contexts/UserContext";
 import UserPostContext from "./contexts/UserPostContext";
 import useLogin from "./hooks/useLogin";
+import FooterContainer from "./components/Footer/FooterContainer/FooterContainer";
 
 const App = () => {
     const [ userState, logInUser, logOutUser ] = useLogin();
@@ -32,7 +33,7 @@ const App = () => {
         <Router>
             <UserContext.Provider value={ { userState, logInUser, logOutUser } }>
                 <UserPostContext.Provider value={ { userPosts, setUserPosts } }>
-                    <div className="App bg-gradient-to-br from-white via-gray-100 to-indigo-200 pb-5 min-h-screen">
+                    <div className="App bg-gradient-to-br from-white via-gray-100 to-indigo-200 min-h-screen">
                         <NavbarContainer />
                         <Switch>
                             <Route exact path="/" component={ Home } />
@@ -50,6 +51,7 @@ const App = () => {
                             <Route exact path="/tools" component={ Tools } />
                             <Route path="/:post" component={ Post } />
                         </Switch>
+                        <FooterContainer />
                     </div>
                 </UserPostContext.Provider>
             </UserContext.Provider>
