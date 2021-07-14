@@ -1,7 +1,17 @@
 ![top-lang](https://img.shields.io/github/languages/top/inknsharps/banneton)
 ![license](https://img.shields.io/github/license/inknsharps/banneton)
 
-# Banneton - A Social Media Platform for Bread Bakers
+<p align="center">
+    <img src="./client/public/banneton.svg" width=100 height=100 alt="banneton" />
+</p>
+
+<h1 align="center"> Banneton - A Social Media Platform for Bread Bakers</h1>
+
+## Table of Contents
+* [Description](#description)  
+* [Installation](#installation)  
+* [Usage](#usage)  
+* [Contributing](#contributing)  
 
 ## Description
 
@@ -56,7 +66,27 @@ To install and run this application locally, you can either run a development bu
 
 ## Usage
 
-Usage examples of the application coming soon.
+### Home Page
+* The landing page for this application. It will display the latest posts that were made. Click on the navigation dropdown to display all the current navigation links.
+
+### Login Page
+* Click on the Login link to navigate to the Login page, where a user can sign up for an account and log into an existing account. After signing up for a new account, they will be automatically logged into that account.
+
+### Dashboard Page
+* The dashboard page is only visible to a logged in user; if you are not logged in it will redirect you to the homepage. 
+* Here, a user can edit their existing posts, and upload a new post.
+
+### Post Page
+* A post page will correspond to a specific post that a user has made, with the full details of that bread and recipe that the creator has provided.
+* Users are also able to comment on the post. Comments can be deleted, but only by the user that has posted them.
+
+### Search Page
+* The search pages allows you to search for and query all the posts by title, tags, and ingredients. Clicking on one of the images will bring up the respective post's page.
+
+### Tools Page
+* The tools page contains tools that may be of use for users who may be looking for some extra functionality when it comes to using or developing recipes.
+* The Baker's Percentage Calculator lets a user input a recipe, and will calculate the baker's percentages for that recipe. There is also a scaler that lets you scale up/down a recipe based on those calculated percentages.
+* The Sourdough Starter and Dough Calculator lets a user input a targeted dough weight, and the respective baker's percentages for water, salt and starter, and will generate the ingredient weights in order to match the dough weight the user has specified. A starter calculator is also provided, which lets the user input their desired starter weight, the desired feeding ratio for the starter, and will output the ingredient weights needed to match the starter weight the user has specified.
 
 ## Contributing
 
