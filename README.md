@@ -16,7 +16,7 @@
 
 ## Description
 
-Banneton is a bread baking focused social media platform built with the MERN stack ([MongoDB](https://www.mongodb.com/), [Express](http://expressjs.com/), [React](https://reactjs.org/) and [Node.js](https://nodejs.dev/)), that lets you search and share recipes, images, and engage in discussion. In addition, the application also features some tools to help you along your baking journey. A deployed version can be found [here](https://limitless-hamlet-15762.herokuapp.com/#/).
+Banneton is a bread baking focused social media platform built with the MERN stack ([MongoDB](https://www.mongodb.com/), [Express](http://expressjs.com/), [React](https://reactjs.org/) and [Node.js](https://nodejs.dev/)), that lets you search and share recipes, images, and engage in discussion. In addition, the application also features some tools to help you along your baking journey. A deployed version can be found [here](https://banneton.herokuapp.com/).
 
 ## Installation
 
