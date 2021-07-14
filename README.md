@@ -1,11 +1,12 @@
-![top-lang](https://img.shields.io/github/languages/top/inknsharps/banneton)
-![license](https://img.shields.io/github/license/inknsharps/banneton)
-
 <p align="center">
     <img src="./client/public/banneton.svg" width=100 height=100 alt="banneton" />
 </p>
 
 <h1 align="center"> Banneton - A Social Media Platform for Bread Bakers</h1>
+<p align="center">
+    <img src="https://img.shields.io/github/languages/top/inknsharps/banneton" />
+    <img src="https://img.shields.io/github/license/inknsharps/banneton" />
+</p>
 
 ## Table of Contents
 * [Description](#description)  
