@@ -15,7 +15,7 @@ const ImageCard = ({ image, title, author, _id, authorId, method, tags, ingredie
 
     return (
         <div className="ImageCard bg-white border border-indigo-300 transition duration-500 ease-in-out hover:bg-gray-200 hover:bg-opacity-50 p-5 rounded-md shadow-lg">
-            <a href={`/#/${_id}`}> {/* Current this uses a hash router link- consider changing if the router changes */}
+            <a href={`/#/post/${_id}`}> {/* Current this uses a hash router link- consider changing if the router changes */}
                 <img className="rounded-lg" src={ image } alt={ title } />
                 <h3 className="text-left text-base font-thin italic border-b-2 border-gray-200 p-2">By: { author }</h3>
                 <h2 className="text-lg text-right font-semibold p-2">{ title }</h2>
