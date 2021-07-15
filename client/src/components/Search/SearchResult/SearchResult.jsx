@@ -3,7 +3,7 @@ import React from "react";
 export const SearchResult = ({ image, _id, title }) => {
     return (
         <div className="SearchResult">
-            <a href={`#/${_id}`}>
+            <a href={`/#/post/${_id}`}>
                 <img src={ image } alt={ title }/>
             </a>
         </div>
@@ -12,7 +12,7 @@ export const SearchResult = ({ image, _id, title }) => {
 
 export const SearchResultSmall = ({ image, _id, title }) => {
     return (
-        <a className="SearchResultSmall container" href={`#/${_id}`}>
+        <a className="SearchResultSmall container" href={`/#/post/${_id}`}>
             <img className="container" src={ image } alt={ title }/>
         </a>
     )
@@ -20,7 +20,7 @@ export const SearchResultSmall = ({ image, _id, title }) => {
 
 export const SearchResultLarge = ({ image, _id, title }) => {
     return (
-        <a className="SearchResultLarge lg:col-span-2 lg:row-span-2 container" href={`#/${_id}`}>
+        <a className="SearchResultLarge lg:col-span-2 lg:row-span-2 container" href={`/#/post/${_id}`}>
             <img className="container" src={ image } alt={ title }/>
         </a>
     )
