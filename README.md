@@ -12,7 +12,8 @@
 * [Description](#description)  
 * [Installation](#installation)  
 * [Usage](#usage)  
-* [Contributing](#contributing)  
+* [Demos](#demos)
+* [Contributing](#contributing) 
 
 ## Description
 
@@ -89,7 +90,8 @@ To install and run this application locally, you can either run a development bu
 * The Baker's Percentage Calculator lets a user input a recipe, and will calculate the baker's percentages for that recipe. There is also a scaler that lets you scale up/down a recipe based on those calculated percentages.
 * The Sourdough Starter and Dough Calculator lets a user input a targeted dough weight, and the respective baker's percentages for water, salt and starter, and will generate the ingredient weights in order to match the dough weight the user has specified. A starter calculator is also provided, which lets the user input their desired starter weight, the desired feeding ratio for the starter, and will output the ingredient weights needed to match the starter weight the user has specified.
 
-## Demo Images
+## Demos
+
 ### Post
 ![post](./img/post.gif)
 
