@@ -10,6 +10,7 @@ import Signup from "./pages/Signup";
 import Dashboard from "./pages/Dashboard";
 import Post from "./pages/Post";
 import Tools from "./pages/Tools";
+import UserProfile from "./pages/UserProfile";
 
 import UserContext from "./contexts/UserContext";
 import UserPostContext from "./contexts/UserPostContext";
@@ -49,7 +50,8 @@ const App = () => {
                                 { !userState.loggedIn ? <Redirect to="/" /> : <Dashboard /> }
                             </Route>
                             <Route exact path="/tools" component={ Tools } />
-                            <Route path="/:post" component={ Post } />
+                            <Route path="/post/:post" component={ Post } />
+                            <Route path="/user/:user" component={ UserProfile } />
                         </Switch>
                         <FooterContainer />
                     </div>

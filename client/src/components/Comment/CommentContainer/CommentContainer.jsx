@@ -12,7 +12,7 @@ const CommentContainer = ({ content, author, authorId, date, postId, commentId }
 
     return (
         <div className="CommentContainer bg-gray-200 bg-opacity-50 rounded-xl ring-1 ring-gray-200 ring-offset-4 m-3 shadow-lg">
-            <CommentHeader author={ author } date={ toLocaleDate(date) } />
+            <CommentHeader author={ author } authorId={ authorId } date={ toLocaleDate(date) } />
             <div className="flex justify-between">
                 <CommentBody content={ content } />
                 { userState._id === authorId ? <CommentOptions postId={ postId } commentId={ commentId } /> : null }
