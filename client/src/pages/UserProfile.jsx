@@ -7,6 +7,7 @@ const UserProfile = props => {
     const [ userPosts, setUserPosts ] = useState([]);
     const [ userName, setUserName ] = useState("");
     const [ userPostCount, setUserPostCount ] = useState(0);
+    const [ userPicture, setUserPicture ] = useState("");
     const userProfileId = props.match.params.user;
     
     useEffect(() => {
@@ -15,6 +16,7 @@ const UserProfile = props => {
                 setUserName(data[0].author);
                 setUserPosts(data);
                 setUserPostCount(data.length);
+                setUserPicture(data[0].image);
             })
             .catch(error => console.error(error));
     }, []);
@@ -23,7 +25,7 @@ const UserProfile = props => {
         <div className="UserProfile m-5">
             <div className="flex justify-center">
                 <div className="w-3/4">
-                    <UserProfileContainer posts={ userPosts } userName={ userName } userPostCount={ userPostCount } />
+                    <UserProfileContainer posts={ userPosts } userName={ userName } userPostCount={ userPostCount } userPicture={ userPicture } />
                 </div>
             </div>
         </div>
