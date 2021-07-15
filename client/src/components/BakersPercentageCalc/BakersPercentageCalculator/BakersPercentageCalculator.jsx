@@ -34,7 +34,7 @@ const BakersPercentageCalculator = ({ toggleFunc }) => {
                 <div className="col-span-2 grid grid-cols-4" key={ ingredient.name }>
                     <IngredientInput labelName={ ingredient.name } defaultValue={ ingredient.weight } />
                     <PercentageDisplay labelName={ ingredient.name } value={ ingredient.weight } />
-                    <button onClick={ () => removeIngredient(ingredient.name) }>
+                    <button onClick={ () => dispatchBakersPercentage({ type: "REMOVE_INGREDIENT", payload: { name: ingredient.name } }) }>
                         <i className="far fa-times-circle text-indigo-500" />
                     </button>
                 </div>
