@@ -5,7 +5,7 @@ import UserProfileImageCards from "../UserProfileImageCards/UserProfileImageCard
 const UserProfileContainer = ({ posts, userName, userPostCount, userPicture }) => {
 
     return (
-        <div className="UserProfileContainer">
+        <div className="UserProfileContainer grid gap-5">
             <UserHeaderContainer userName={ userName } userPostCount={ userPostCount } userPicture={ userPicture } />
             <UserProfileImageCards posts={ posts } />
         </div>
