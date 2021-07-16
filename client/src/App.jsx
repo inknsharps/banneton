@@ -34,25 +34,27 @@ const App = () => {
         <Router>
             <UserContext.Provider value={ { userState, logInUser, logOutUser } }>
                 <UserPostContext.Provider value={ { userPosts, setUserPosts } }>
-                    <div className="App bg-gradient-to-br from-white via-gray-100 to-indigo-200 min-h-screen">
+                    <div className="App flex flex-col min-h-screen bg-gradient-to-br from-white via-gray-100 to-indigo-200 min-h-screen">
+                        <div className="flex-grow">
                         <NavbarContainer />
-                        <Switch>
-                            <Route exact path="/" component={ Home } />
-                            <Route exact path="/login">
-                                { userState.loggedIn ? <Redirect to="/" /> : <Login /> }
-                            </Route>
-                            <Route exact path="/logout">
-                                { !userState.loggedIn ? <Redirect to="/" /> : <Logout /> }
-                            </Route>
-                            <Route exact path="/search" component={ Search } />
-                            <Route exact path="/signup" component={ Signup } />
-                            <Route exact path="/dashboard">
-                                { !userState.loggedIn ? <Redirect to="/" /> : <Dashboard /> }
-                            </Route>
-                            <Route exact path="/tools" component={ Tools } />
-                            <Route path="/post/:post" component={ Post } />
-                            <Route path="/user/:user" component={ UserProfile } />
-                        </Switch>
+                            <Switch>
+                                <Route exact path="/" component={ Home } />
+                                <Route exact path="/login">
+                                    { userState.loggedIn ? <Redirect to="/" /> : <Login /> }
+                                </Route>
+                                <Route exact path="/logout">
+                                    { !userState.loggedIn ? <Redirect to="/" /> : <Logout /> }
+                                </Route>
+                                <Route exact path="/search" component={ Search } />
+                                <Route exact path="/signup" component={ Signup } />
+                                <Route exact path="/dashboard">
+                                    { !userState.loggedIn ? <Redirect to="/" /> : <Dashboard /> }
+                                </Route>
+                                <Route exact path="/tools" component={ Tools } />
+                                <Route path="/post/:post" component={ Post } />
+                                <Route path="/user/:user" component={ UserProfile } />
+                            </Switch>
+                        </div>
                         <FooterContainer />
                     </div>
                 </UserPostContext.Provider>
