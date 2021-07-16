@@ -82,6 +82,9 @@ To install and run this application locally, you can either run a development bu
 * A post page will correspond to a specific post that a user has made, with the full details of that bread and recipe that the creator has provided.
 * Users are also able to comment on the post. Comments can be deleted, but only by the user that has posted them.
 
+### User Profile Page
+* Click on any username and it will link you to their profile, where you can view their respective posts.
+
 ### Search Page
 * The search pages allows you to search for and query all the posts by title, tags, and ingredients. Clicking on one of the images will bring up the respective post's page.
 
